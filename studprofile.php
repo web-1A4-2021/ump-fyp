@@ -1,6 +1,14 @@
 <?php
 session_start();
 $_SESSION['id'] ='id';
+if (isset($_GET["studID"])) 
+{
+  $studentid = $_GET["studID"];
+} else
+{
+ header("Location: studentinfo.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +70,7 @@ $_SESSION['id'] ='id';
               
                 
                   $user = $_SESSION['id'];
-                   $sql = "SELECT * FROM students WHERE id = $user";
+                   $sql = "SELECT * FROM students WHERE id = 'studentid'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
