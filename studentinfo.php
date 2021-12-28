@@ -69,7 +69,7 @@ session_start();
              }
               
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT studID,studname,fypstatus FROM students"; // WHERE userID = $user";
+                   $sql = "SELECT id,studID,studname,fypstatus FROM students"; // WHERE userID = $user";
                    $result = $conn -> query($sql);
 
                    if($result->num_rows > 0){
@@ -78,7 +78,7 @@ session_start();
                        echo '<tr><td>' .$row["studID"]. '</td>';
                         echo '<td>' .$row["studname"]. '</td>';
                        echo '<td>' .$row["fypstatus"]. '</td>';
-                       echo '<td><a href="studprofile.php">View</a<td>';
+                       echo '<td><a href="studprofile.php?studID='.$row["id"].'">View</a<td>';
                        echo '<td><a href="studprog.php">View</a></td></tr>';
                  }
 
