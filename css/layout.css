@@ -126,3 +126,16 @@ table .center td{
     text-align: center;
 }
 
+.card {
+
+    display: table;
+    margin: 0px;
+    border: 1px solid cadetblue;
+    outline: 3px solid cadetblue;
+    outline-offset: 5px;
+    float: right;
+    height: 300px; 
+    width: 200px;
+    padding: 3px;
+    
+  }
