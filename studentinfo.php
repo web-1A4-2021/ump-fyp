@@ -21,6 +21,12 @@ session_start();
            text-align: center;
            padding-left:100px;
        }
+       table{
+           margin-left:100px;
+            text-align: center;
+            width: 80%;
+
+        }
 
 
         </style>
@@ -63,13 +69,13 @@ session_start();
             </tr>
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                $conn = mysqli_connect("localhost", "root", "", "student");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }
               
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT id,studID,studname,fypstatus FROM students"; // WHERE userID = $user";
+                   $sql = "SELECT st_id,studID,studname,fypstatus FROM fypstud"; // WHERE userID = $user";
                    $result = $conn -> query($sql);
 
                    if($result->num_rows > 0){
@@ -78,8 +84,8 @@ session_start();
                        echo '<tr><td>' .$row["studID"]. '</td>';
                         echo '<td>' .$row["studname"]. '</td>';
                        echo '<td>' .$row["fypstatus"]. '</td>';
-                       echo '<td><a href="studprofile.php?studID='.$row["id"].'">View</a<td>';
-                       echo '<td><a href="studprog.php">View</a></td></tr>';
+                       echo '<td><a href="studprofile.php?studID='.$row["st_id"].'">View</a<td>';
+                       echo '<td><a href="studprog.php?studID='.$row["st_id"].'">View</a></td></tr>';
                  }
 
              }

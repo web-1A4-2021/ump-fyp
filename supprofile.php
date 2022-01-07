@@ -55,14 +55,14 @@ $_SESSION['id'] ='id';
             
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                $conn = mysqli_connect("localhost", "root", "", "student");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }
               
                 
                   $user = $_SESSION['id'];
-                   $sql = "SELECT * FROM supervisor WHERE id = $user";
+                   $sql = "SELECT * FROM supervisor ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -70,13 +70,13 @@ $_SESSION['id'] ='id';
                     while($row = $result -> fetch_assoc() )
                     {
                     
-                       echo '<tr><td > Name: </td>' ;
-                       echo '<td>' .$row["supname"]. '</td></tr>';
-                       echo '<tr><td> Email: </td>' ;
+                       echo '<br><tr><td id="right" > Name: </td>' ;
+                       echo '<td >' .$row["supname"]. '</td></tr>';
+                       echo '<tr><td id="right"> Email: </td>' ;
                        echo '<td>' .$row["supemail"]. '</td></tr>';
-                       echo '<tr><td> Phone No.: </td>' ;
+                       echo '<tr><td id="right"> Phone No.: </td>' ;
                        echo '<td>' .$row["supphone"]. '</td></tr>';
-                       echo '<tr><td> Room: </td>' ;
+                       echo '<tr><td id="right"> Room: </td>' ;
                        echo '<td>' .$row["suproom"]. '</td></tr>';
                     }
                 }

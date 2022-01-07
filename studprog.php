@@ -1,6 +1,14 @@
 <?php
 session_start();
-$_SESSION['id'] ='id';
+$_SESSION['userid'] ='userid';
+$_SESSION['userid'] ='userid';
+if (isset($_GET["studID"])) 
+{
+  $studentid = $_GET["studID"];
+} else
+{
+ header("Location: studentinfo.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +33,14 @@ $_SESSION['id'] ='id';
         }
 
         table{
-            padding-left: 100px;
+           margin-left:100px;
             text-align: center;
+            width: 80%;
+
+        }
+        h4{
+        margin-left:100px;
+         font-family: 'Montserrat';
         }
 
 
@@ -57,71 +71,91 @@ $_SESSION['id'] ='id';
     <div class="column right">
 
     <br><h3>Student Progress</h3>
-    <h5>Name: <?php echo $row["studname"] ; ?></h5><br>
+    
+       <?php
+          $conn = mysqli_connect("localhost", "root", "", "student");
+          if (!$conn) {
+             die('Could not connect: ' . mysqli_connect_error());
+       }
+        
+       $sql = "SELECT studname FROM fypstud WHERE st_id = '$studentid'";
+       $result = $conn -> query($sql);
+         if($result->num_rows > 0)
+         {
+             while($row = $result -> fetch_assoc() )
+             {
+                echo '<br><h4>Name : ' .$row["studname"]. '</h4><br>';
+               }
+           }
+             else{
+                 echo "No Result";
+              
+              } 
+              ?>
     <form>
 
         <table  id="tb1" border="1" >
 
             
             <tr>
-                <td>Week 1 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td >Week 1 </td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 2 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 3 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 4 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 5 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 6 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 7 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 8 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 9 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 10 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 11 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 12 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 13 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 14 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
             <tr>
                 <td>Week 15 </td>
-                <td><a href="logbook.php">View</a></td>
+                <td><a href="studlogbook.php">View</a></td>
             </tr>
 
 

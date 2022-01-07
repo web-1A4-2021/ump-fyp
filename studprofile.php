@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id'] ='id';
+$_SESSION['st_id'] ='st_id';
 if (isset($_GET["studID"])) 
 {
   $studentid = $_GET["studID"];
@@ -63,21 +63,20 @@ if (isset($_GET["studID"]))
             
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                $conn = mysqli_connect("localhost", "root", "", "student");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }
-              
                 
-                  $user = $_SESSION['id'];
-                   $sql = "SELECT * FROM students WHERE id = 'studentid'";
+                  //$user = $_SESSION['id'];
+                   $sql = "SELECT * FROM fypstud WHERE st_id = '$studentid'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
                 {
                     while($row = $result -> fetch_assoc() )
                     {
-                    echo '<br><td id="right"> Student ID &nbsp: </td>' ;
+                        echo '<br><td id="right"> Student ID &nbsp: </td>' ;
                        echo '<td>' .$row["studID"]. '</td></tr>';
                        echo '<tr><td id="right"> Name &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp: </td>' ;
                        echo '<td>' .$row["studname"]. '</td></tr>';
@@ -91,9 +90,7 @@ if (isset($_GET["studID"]))
                        echo '<td>' .$row["fypstatus"]. '</td></tr>';
                     }
                 }
-                 
-
-             
+          
              else{
                  echo "No Result";
              }

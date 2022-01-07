@@ -30,6 +30,8 @@ h3{
     font-family: 'Montserrat';
 
 }
+
+
 html,body{
     height: 100%;
 }
@@ -120,6 +122,7 @@ table{
 button{
     height:30px;
     width: 70px;
+    margin-left:100px
 }
 
 table .center td{
@@ -139,3 +142,5 @@ table .center td{
     padding: 3px;
     
   }
+
+  

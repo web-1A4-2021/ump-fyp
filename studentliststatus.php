@@ -1,4 +1,5 @@
 <?php
+require_once('connect.php');
 session_start();
 ?>
 
@@ -66,11 +67,6 @@ session_start();
 
 
                 <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
-                if (!$conn) 
-                {
-                   die('Could not connect: ' . mysqli_connect_error());
-                }
               
                   //$user = $_SESSION['id'];
                    $sql = "SELECT id,studID,studname,fypstatus FROM students"; // WHERE userID = $user";
