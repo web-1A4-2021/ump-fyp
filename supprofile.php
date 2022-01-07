@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id'] ='id';
+$_SESSION['st_id'] ='st_id';
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ $_SESSION['id'] ='id';
              }
               
                 
-                  $user = $_SESSION['id'];
+                  //$user = $_SESSION['id'];
                    $sql = "SELECT * FROM supervisor ";
                    $result = $conn -> query($sql);
 
