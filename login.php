@@ -23,7 +23,8 @@
     </select>
     <input class='button' type="submit" value="Login">
 </form>
-<footer id='footer'>
+<footer id='footer'style='margin:0;'>
     <?php include './include/footer.php';?>     
-</footer></body>
+</footer>
+</body>
 </html>

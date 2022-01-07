@@ -39,19 +39,12 @@
             <?php
                 
             ?>
-        </table>    
-        <br><button type="back" id ="button" onClick="myFunction">Back</button>
-
-<script>
-     function myFuntion(){
-         window.location.href="../studentinfo.php";
-     }
-</script>
-</form>
+        </table>
+        <br><button type="back" id ="button" onClick="window.location.href='./admin.php';">Back</button>
+    </form>
 </div>
 <footer id="footer">
     <?php include '../include/footer.php';?>     
-
 </footer>    
 </body>
 </html>
