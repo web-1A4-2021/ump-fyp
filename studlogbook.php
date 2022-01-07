@@ -2,9 +2,9 @@
 session_start();
 $_SESSION['st_id'] ='st_id';
 
-if (isset($_GET["studID"])) 
+if (isset($_GET["logID"])) 
 {
-  $studentid = $_GET["studID"];
+  $idlog = $_GET["logID"];
   
 } else
 {
@@ -71,7 +71,7 @@ if (isset($_GET["studID"]))
               
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT logbook.fyptitle,logbook.week,fyp.st_id,fypstud.studname,fypstud.studID,supervisor.supname,logbook.logtime,logbook.logdate,logbook.curactivity,logbook.nextactivity FROM fypstud,logbook,supervisor where logbook.studid = '$studentid' ";
+                   $sql = "SELECT * FROM fypstud,logbook,supervisor where logbook.logid = '$idlog' ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -97,6 +97,7 @@ if (isset($_GET["studID"]))
                        echo '<td>' .$row["curactivity"]. '</td></tr>';
                        echo '<tr><td id="right"> Next Meeting Activity: </td>' ;
                        echo '<td>' .$row["nextactivity"]. '</td></tr>';
+                       
                     }
                 }
                  
