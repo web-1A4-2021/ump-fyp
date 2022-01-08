@@ -71,7 +71,7 @@ if (isset($_GET["logID"]))
               
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM fypstud,logbook,supervisor where logbook.logid = '$idlog' ";
+                   $sql = "SELECT * FROM logbook  where logid= '$idlog' ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -83,12 +83,12 @@ if (isset($_GET["logID"]))
                        echo '<td >' .$row["fyptitle"]. '</td></tr>';
                        echo '<tr><td id="right"> Week : </td>' ;
                        echo '<td>' .$row["week"]. '</td></tr>';
-                       echo '<tr><td id="right"> Name: </td>' ;
-                       echo '<td>' .$row["studname"]. '</td></tr>';
-                       echo '<tr><td id="right"> Student ID: </td>' ;
-                       echo '<td>' .$row["studID"]. '</td></tr>';
-                       echo '<tr><td id="right"> Supervisor: </td>' ;
-                       echo '<td>' .$row["supname"]. '</td></tr>';
+                      // echo '<tr><td id="right"> Name: </td>' ;
+                      // echo '<td>' .$row["studname"]. '</td></tr>';
+                     //  echo '<tr><td id="right"> Student ID: </td>' ;
+                     //  echo '<td>' .$row["studID"]. '</td></tr>';
+                    //   echo '<tr><td id="right"> Supervisor: </td>' ;
+                   //    echo '<td>' .$row["supname"]. '</td></tr>';
                        echo '<tr><td id="right"> Time: </td>' ;
                        echo '<td>' .$row["logtime"]. '</td></tr>';
                        echo '<tr><td id="right"> Date: </td>' ;
@@ -97,6 +97,8 @@ if (isset($_GET["logID"]))
                        echo '<td>' .$row["curactivity"]. '</td></tr>';
                        echo '<tr><td id="right"> Next Meeting Activity: </td>' ;
                        echo '<td>' .$row["nextactivity"]. '</td></tr>';
+                       echo '<tr><td id="right"> Updated Report: </td>' ;
+                       echo '<td><a href="download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
                        
                     }
                 }
