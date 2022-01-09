@@ -1,4 +1,4 @@
-<?php include_once '../include/dbconnect.php' ?>
+<?php include_once '../include/config.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
