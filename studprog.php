@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['userid'] ='userid';
-$_SESSION['userid'] ='userid';
+$_SESSION['st_id'] ='st_id';
+
 if (isset($_GET["studID"])) 
 {
   $studentid = $_GET["studID"];
@@ -96,72 +96,35 @@ if (isset($_GET["studID"]))
 
         <table  id="tb1" border="1" >
 
+        <?php
+            $sql = "SELECT logid,  week FROM logbook WHERE studid = '$studentid'  " ;
+            $result = $conn -> query($sql);
+
+            if($result->num_rows > 0)
+            {
+                while($row = $result -> fetch_assoc() )
+                {
+                    ?>
+
             
-            <tr>
-                <td >Week 1 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 2 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 3 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 4 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 5 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 6 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 7 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 8 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 9 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 10 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 11 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 12 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 13 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 14 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
-            <tr>
-                <td>Week 15 </td>
-                <td><a href="studlogbook.php">View</a></td>
-            </tr>
+              <tr>
+             <td><?php echo 'Week ' .$row["week"].''; ?></td>
+             <td><a href="studlogbook.php?logID=<?php echo $row['logid'] ?>">View</a></td>
+              </tr>
+              
+                    
+                <?php
+            }
+
+        }
+        else{
+            echo "No Result";
+        }
+        $conn->close();
 
 
+?>
  </table>
-
- 
  <br><button type="back" onClick="myFunction">Back</button>
 
  <script>

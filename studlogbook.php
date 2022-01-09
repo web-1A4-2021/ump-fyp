@@ -1,11 +1,11 @@
 <?php
 session_start();
-$_SESSION['id'] ='id';
-$_SESSION['userid'] ='userid';
-$_SESSION['userid'] ='userid';
-if (isset($_GET["studID"])) 
+$_SESSION['st_id'] ='st_id';
+
+if (isset($_GET["logID"])) 
 {
-  $studentid = $_GET["studID"];
+  $idlog = $_GET["logID"];
+  
 } else
 {
  header("Location: studentinfo.php");
@@ -70,8 +70,8 @@ if (isset($_GET["studID"]))
              }
               
                 
-                  $user = $_SESSION['id'];
-                   $sql = "SELECT logbook.fyptitle,logbook.week,fypstud.studname,fypstud.studid,logbook.logtime,logbook.logdate,logbook.curactivity,logbook.nextactivity FROM fypstud INNER JOIN logbook ON fypstud.'$studentid'=logbook.studid;  ";
+                  //$user = $_SESSION['id'];
+                   $sql = "SELECT * FROM logbook  where logid= '$idlog' ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -83,12 +83,12 @@ if (isset($_GET["studID"]))
                        echo '<td >' .$row["fyptitle"]. '</td></tr>';
                        echo '<tr><td id="right"> Week : </td>' ;
                        echo '<td>' .$row["week"]. '</td></tr>';
-                       echo '<tr><td id="right"> Name: </td>' ;
-                       echo '<td>' .$row["studname"]. '</td></tr>';
-                       echo '<tr><td id="right"> Student ID: </td>' ;
-                       echo '<td>' .$row["studid"]. '</td></tr>';
-                       echo '<tr><td id="right"> Supervisor: </td>' ;
-                       echo '<td>' .$row["supname"]. '</td></tr>';
+                      // echo '<tr><td id="right"> Name: </td>' ;
+                      // echo '<td>' .$row["studname"]. '</td></tr>';
+                     //  echo '<tr><td id="right"> Student ID: </td>' ;
+                     //  echo '<td>' .$row["studID"]. '</td></tr>';
+                    //   echo '<tr><td id="right"> Supervisor: </td>' ;
+                   //    echo '<td>' .$row["supname"]. '</td></tr>';
                        echo '<tr><td id="right"> Time: </td>' ;
                        echo '<td>' .$row["logtime"]. '</td></tr>';
                        echo '<tr><td id="right"> Date: </td>' ;
@@ -97,6 +97,9 @@ if (isset($_GET["studID"]))
                        echo '<td>' .$row["curactivity"]. '</td></tr>';
                        echo '<tr><td id="right"> Next Meeting Activity: </td>' ;
                        echo '<td>' .$row["nextactivity"]. '</td></tr>';
+                       echo '<tr><td id="right"> Updated Report: </td>' ;
+                       echo '<td><a href="download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
+                       
                     }
                 }
                  
@@ -113,11 +116,11 @@ if (isset($_GET["studID"]))
  </table>
 
  
- <br><button type="Back" onClick="myFunction">Update</button>
+ <br><button type="Back" onClick="myFunction">Back</button>
 
  <script>
      function myFuntion(){
-         window.location.href="studprog.php";
+         window.location.href="studentinfo.php";
      }
 </script>
 
