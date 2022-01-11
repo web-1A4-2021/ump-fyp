@@ -25,14 +25,37 @@
     <div class="column left">
         <ul>
             <li> <a href="./admin.php" class="button" name="home">Home</a></li>
-            <li><a href="" class="button"  name="">Student Info</a></li>
-            <li><a href="" class="button" name="">Profile</a></li>
-            <li><a href="#" class="button" name="rate">Rate</a></li>
-            <li><a href="#" class="button"  name="report">Report</a></li>
+            <li> <a href="./" class="button"  name="">User</a></li>
+            <li> <a href="./" class="button"  name="">Report</a></li>
         </ul>
     </div>
     <div class="column right">
     <br><h3>Administrator</h3>
+    <?php
+        $q = mysqli_query($conn, "SELECT * FROM userinfo ");
+        $view = mysqli_num_rows($q);
+        if($view == 0)
+        {
+            $output = 'No Search Result';
+        }else
+        {
+            echo "<table>";
+            echo "<tr>
+                <th>User ID</th>
+                <th>User Role</th>
+                <th>User Type</th>
+                </tr>";
+            while($row = mysqli_fetch_array($q))
+            {
+                echo "<tr>
+                    <td>".$row['user_id']."</td>
+                    <td>".$row['user_role']."</td>
+                    <td>".$row['user_type']."</td>
+                    </tr>";
+            }
+            echo "</table>";
+        }
+    ?>
     <form>
         <table class="tb">
             <tr>
