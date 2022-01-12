@@ -9,9 +9,10 @@
     <title>Login</title>
 </head>
 <body>
-<form action="./function/userLogin.php" method="get">
-    <label for="userid">User ID</label>
-    <input type="text" name="userid" id="userid" placeholder="User ID"> <br>
+<form action="./function/userLogin.php" method="post">
+    <p>UMP FYP</p>
+    <label for="matricid">Matric ID</label>
+    <input type="text" name="matricid" id="matricid" placeholder="User ID"> <br>
     <label for="pwd">Password</label>
     <input type="password" name="pwd" id="pwd" placeholder='Password'> <br>
     <label for="usertype">User Type</label>
@@ -21,10 +22,21 @@
         <option value="lec">Lecturer</option>
 
     </select>
+    <br>
     <input class='button' type="submit" value="Login">
 </form>
 <footer id='footer'style='margin:0;'>
     <?php include './include/footer.php';?>     
 </footer>
+<style>
+    form{
+        text-align:center;
+        height:80vh;
+    }
+    form *{
+        margin:10px;
+        padding: 5px 0px 5px 0px;
+    }
+</style>
 </body>
 </html>
