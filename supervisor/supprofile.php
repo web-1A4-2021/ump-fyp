@@ -1,15 +1,7 @@
 <?php
 session_start();
-$_SESSION['st_id'] ='st_id';
+$_SESSION['supid'] ='supid';
 
-if (isset($_GET["logID"])) 
-{
-  $idlog = $_GET["logID"];
-  
-} else
-{
- header("Location: studentinfo.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +19,18 @@ if (isset($_GET["logID"]))
 
         <title>Supervisor Profile</title>
         <style>
-       #feedback{
+   input{
           width:50%;
           height: 50px;
-         
+          margin-top:30px;
           padding-left: 20px;
-       }
+      }
+
+      #right{
+
+padding-left: 100px;
+width: 20%;
+}
 
 
         </style>
@@ -61,8 +59,8 @@ if (isset($_GET["logID"]))
     </div>
     <div class="column right">
 
-    <br><h3>Logbook Activities Every Week</h3>
-    <form method="post">
+    <br><h3>Personal Information</h3>
+    <form action="" name="svform" method="post" enctype = "multipart/form-data">
 
         <table class="tb">
 
@@ -76,7 +74,7 @@ if (isset($_GET["logID"]))
               
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM logbook  where logid= '$idlog' ";
+                   $sql = "SELECT * FROM supervisor ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -84,29 +82,14 @@ if (isset($_GET["logID"]))
                     while($row = $result -> fetch_assoc() )
                     {
                     
-                       echo '<br><tr><td id="right" > Fyp Title: </td>' ;
-                       echo '<td >' .$row["fyptitle"]. '</td></tr>';
-                       echo '<tr><td id="right"> Week : </td>' ;
-                       echo '<td>' .$row["week"]. '</td></tr>';
-                      // echo '<tr><td id="right"> Name: </td>' ;
-                      // echo '<td>' .$row["studname"]. '</td></tr>';
-                     //  echo '<tr><td id="right"> Student ID: </td>' ;
-                     //  echo '<td>' .$row["studID"]. '</td></tr>';
-                    //   echo '<tr><td id="right"> Supervisor: </td>' ;
-                   //    echo '<td>' .$row["supname"]. '</td></tr>';
-                       echo '<tr><td id="right"> Time: </td>' ;
-                       echo '<td>' .$row["logtime"]. '</td></tr>';
-                       echo '<tr><td id="right"> Date: </td>' ;
-                       echo '<td>' .$row["logdate"]. '</td></tr>';
-                       echo '<tr><td id="right"> Meeting Activity: </td>' ;
-                       echo '<td>' .$row["curactivity"]. '</td></tr>';
-                       echo '<tr><td id="right"> Next Meeting Activity: </td>' ;
-                       echo '<td>' .$row["nextactivity"]. '</td></tr>';
-                       echo '<tr><td id="right"> Updated Report: </td>' ;
-                       echo '<td><a href="download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
-                       echo '<tr><td id="right"> Feedback: </td>' ;
-                       echo '<td><textarea id="feedback" name="logfeedback" placeholder="Write your feedback here.." style="height:200px"></textarea>';
-                       
+                       echo '<br><tr><td id="right" > Name: </td>' ;
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Name" name="name" value="'.$row["supname"].'" </td></tr>';
+                       echo '<tr><td id="right"> Email: </td>' ;
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Email" name="email" value="'.$row["supemail"].'" </td></tr>';
+                       echo '<tr><td id="right"> Phone No.: </td>' ;
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Phone No." name="phone" value="'.$row["supphone"].'" </td></tr>';
+                       echo '<tr><td id="right"> Room: </td>' ;
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Room" name="suproom" value="'.$row["suproom"].'" </td></tr>';
                     }
                 }
                  
@@ -123,14 +106,12 @@ if (isset($_GET["logID"]))
  </table>
 
  
- <br><button type="back" onClick="myFunction">Back</button>
- <button type="update" name="update" >Submit</button>
+ <br><button type="update" name="update" >Update</button>
 
  <script>
      function myFuntion(){
          window.location.href="studentinfo.php";
      }
-
 </script>
 
 <?php
@@ -143,16 +124,13 @@ if(isset($_POST["update"]))
 
 {
 
-    mysqli_query($conn,"update logbook set logfeedback='$_POST[logfeedback]' where logid='$idlog'") or die(mysqli_error($conn));
+    mysqli_query($conn,"update supervisor set supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]' ") or die(mysqli_error($conn));
 
     echo '<script>window.alert("Thankyou for your feedback!")';
 }
-else{
-    echo "No Result";
-}
-
-$conn->close();
 ?>
+</form>
+
 </form>
 
 
