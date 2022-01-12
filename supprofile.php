@@ -54,7 +54,7 @@ width: 20%;
        <li> <a href="#" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
-        <li><a href="#" class="button" name="rate">Rate</a></li>
+        <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
        <li><a href="#" class="button"  name="report">Report</a></li>
     </div>
     <div class="column right">
