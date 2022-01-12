@@ -16,6 +16,7 @@ $_SESSION['supid'] ='supid';
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="css/ratinglayout.css" type="text/css" rel="stylesheet" media="screen,projection">
 
         <title>Supervisor Profile</title>
         <style>
@@ -65,7 +66,7 @@ width: 20%;
 
 <?php
     // Connecting with database
-       $conn = mysqli_connect("localhost", "root", "", "test");
+       $conn = mysqli_connect("localhost", "root", "", "student");
  
     // Getting all students
        $result = mysqli_query($conn, "SELECT * FROM student");
