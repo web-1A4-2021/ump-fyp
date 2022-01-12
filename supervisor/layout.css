@@ -1,0 +1,147 @@
+img{
+    width: 55px;;
+    height: 60px;
+   padding-left: 12px;
+
+}
+
+.header{
+    width: 100vw;
+    height: 100px;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+    font-family: 'Poppins';
+    background-color: cadetblue;
+    text-decoration: none;
+}
+header .inner{
+    width: 1300px; /* This is the inner width of the content inside of your header (80%, etc) */
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}   
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+
+}
+h3{
+
+    font-family: 'Montserrat';
+
+}
+
+
+html,body{
+    height: 100%;
+}
+
+
+
+th{
+    background-color: #FDE992;
+    height: 50px;
+}
+
+td{
+
+    height: 30px;
+}
+#footer {
+  
+    text-align: center;
+    padding: 10px;
+    background-color: cadetblue;
+    color: white;
+    position: relative;
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    margin-top: -100px;
+    clear:both;
+
+
+}
+.logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+}
+.logo_container h1{
+    color:white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 200;
+    padding-top: 20px;
+
+}
+
+caption{
+    padding-top: 50px;
+    float: left;
+}
+
+.header nav
+{
+    float:right;
+    height: 100%;
+   
+}
+
+.header nav li{
+    height: 100%;
+    display: table;
+    float:left;
+   margin-right: 30px;
+   margin-top: 20px;
+    font-family: 'Montserrat';
+    font-size: 15px;
+   
+}
+
+.header nav li:last-of-type{
+    margin-right:20;
+   
+}
+
+.header nav a{
+    color:white;
+  
+}
+
+table{
+    font-family: 'Montserrat';
+    font-size: 14px;
+
+}
+
+
+button{
+    height:30px;
+    width: 70px;
+    margin-left:100px
+}
+
+table .center td{
+    text-align: center;
+}
+
+.card {
+
+    display: table;
+    margin: 0px;
+    border: 1px solid cadetblue;
+    outline: 3px solid cadetblue;
+    outline-offset: 5px;
+    float: right;
+    height: 300px; 
+    width: 200px;
+    padding: 3px;
+    
+  }
+
+
+  

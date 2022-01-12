@@ -12,8 +12,8 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="msapplication-tap-highlight" content="no">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
-        <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="supervisor/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="supervisor/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
         <title>Student Info</title>
         <style>
