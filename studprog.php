@@ -97,7 +97,7 @@ if (isset($_GET["studID"]))
         <table  id="tb1" border="1" >
 
         <?php
-            $sql = "SELECT logid,  week FROM logbook WHERE studid = '$studentid'  " ;
+            $sql = "SELECT logid, week FROM logbook WHERE studid = '$studentid'" ;
             $result = $conn -> query($sql);
 
             if($result->num_rows > 0)

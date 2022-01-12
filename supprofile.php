@@ -1,6 +1,7 @@
 <?php
 session_start();
-$_SESSION['st_id'] ='st_id';
+$_SESSION['supid'] ='supid';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +19,18 @@ $_SESSION['st_id'] ='st_id';
 
         <title>Supervisor Profile</title>
         <style>
-       
+   input{
+          width:50%;
+          height: 50px;
+          margin-top:30px;
+          padding-left: 20px;
+      }
+
+      #right{
+
+padding-left: 100px;
+width: 20%;
+}
 
 
         </style>
@@ -48,7 +60,7 @@ $_SESSION['st_id'] ='st_id';
     <div class="column right">
 
     <br><h3>Personal Information</h3>
-    <form>
+    <form action="" name="svform" method="post" enctype = "multipart/form-data">
 
         <table class="tb">
 
@@ -71,13 +83,13 @@ $_SESSION['st_id'] ='st_id';
                     {
                     
                        echo '<br><tr><td id="right" > Name: </td>' ;
-                       echo '<td >' .$row["supname"]. '</td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Name" name="name" value="'.$row["supname"].'" </td></tr>';
                        echo '<tr><td id="right"> Email: </td>' ;
-                       echo '<td>' .$row["supemail"]. '</td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Email" name="email" value="'.$row["supemail"].'" </td></tr>';
                        echo '<tr><td id="right"> Phone No.: </td>' ;
-                       echo '<td>' .$row["supphone"]. '</td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Phone No." name="phone" value="'.$row["supphone"].'" </td></tr>';
                        echo '<tr><td id="right"> Room: </td>' ;
-                       echo '<td>' .$row["suproom"]. '</td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Room" name="suproom" value="'.$row["suproom"].'" </td></tr>';
                     }
                 }
                  
@@ -94,13 +106,30 @@ $_SESSION['st_id'] ='st_id';
  </table>
 
  
- <br><button type="update" onClick="myFunction">Update</button>
+ <br><button type="update" name="update" >Update</button>
 
  <script>
      function myFuntion(){
          window.location.href="studentinfo.php";
      }
 </script>
+
+<?php
+$conn = mysqli_connect("localhost", "root", "", "student");
+if (!$conn) {
+   die('Could not connect: ' . mysqli_connect_error());
+}
+
+if(isset($_POST["update"]))
+
+{
+
+    mysqli_query($conn,"update supervisor set supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]' ") or die(mysqli_error($conn));
+
+    echo '<script>window.alert("Thankyou for your feedback!")';
+}
+?>
+</form>
 
 </form>
 

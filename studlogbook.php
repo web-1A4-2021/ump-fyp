@@ -27,7 +27,12 @@ if (isset($_GET["logID"]))
 
         <title>Supervisor Profile</title>
         <style>
-       
+       #feedback{
+          width:50%;
+          height: 50px;
+         
+          padding-left: 20px;
+       }
 
 
         </style>
@@ -57,7 +62,7 @@ if (isset($_GET["logID"]))
     <div class="column right">
 
     <br><h3>Logbook Activities Every Week</h3>
-    <form>
+    <form method="post">
 
         <table class="tb">
 
@@ -99,6 +104,8 @@ if (isset($_GET["logID"]))
                        echo '<td>' .$row["nextactivity"]. '</td></tr>';
                        echo '<tr><td id="right"> Updated Report: </td>' ;
                        echo '<td><a href="download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
+                       echo '<tr><td id="right"> Feedback: </td>' ;
+                       echo '<td><textarea id="feedback" name="logfeedback" placeholder="Write your feedback here.." style="height:200px"></textarea>';
                        
                     }
                 }
@@ -116,14 +123,36 @@ if (isset($_GET["logID"]))
  </table>
 
  
- <br><button type="Back" onClick="myFunction">Back</button>
+ <br><button type="back" onClick="myFunction">Back</button>
+ <button type="update" name="update" >Submit</button>
 
  <script>
      function myFuntion(){
          window.location.href="studentinfo.php";
      }
+
 </script>
 
+<?php
+$conn = mysqli_connect("localhost", "root", "", "student");
+if (!$conn) {
+   die('Could not connect: ' . mysqli_connect_error());
+}
+
+if(isset($_POST["update"]))
+
+{
+
+    mysqli_query($conn,"update logbook set logfeedback='$_POST[logfeedback]' where logid='$idlog'") or die(mysqli_error($conn));
+
+    echo '<script>window.alert("Thankyou for your feedback!")';
+}
+else{
+    echo "No Result";
+}
+
+$conn->close();
+?>
 </form>
 
 
