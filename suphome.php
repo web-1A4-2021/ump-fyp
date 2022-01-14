@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['st_id'] ='st_id';
+$_SESSION['User'] ='user_id';
 //if (isset($_GET["studID"])) 
 //{
 //  $studentid = $_GET["studID"];

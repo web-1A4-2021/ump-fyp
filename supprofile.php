@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['supid'] ='supid';
 
 ?>
 
@@ -16,7 +15,9 @@ $_SESSION['supid'] ='supid';
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
+        <link rel="stylesheet" href="css/alert.css">
+        <script>  src="https://code.jquery.com/jquery-3.6.0.js"</script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <title>Supervisor Profile</title>
         <style>
    input{
@@ -58,6 +59,8 @@ width: 20%;
        <li><a href="#" class="button"  name="report">Report</a></li>
     </div>
     <div class="column right">
+    
+
 
     <br><h3>Personal Information</h3>
     <form action="" name="svform" method="post" enctype = "multipart/form-data">
@@ -74,7 +77,7 @@ width: 20%;
               
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM supervisor ";
+                   $sql = "SELECT supervisor.*, login.user_id FROM login,supervisor where supervisor.user_id = login.user_id";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -108,11 +111,7 @@ width: 20%;
  
  <br><button type="update" name="update" >Update</button>
 
- <script>
-     function myFuntion(){
-         window.location.href="studentinfo.php";
-     }
-</script>
+
 
 <?php
 $conn = mysqli_connect("localhost", "root", "", "student");
@@ -123,15 +122,18 @@ if (!$conn) {
 if(isset($_POST["update"]))
 
 {
+    
+    mysqli_query($conn,"update login,supervisor set supervisor.supname='$_POST[name]', supervisor.supemail='$_POST[email]', supervisor.supphone='$_POST[phone]',supervisor.suproom='$_POST[suproom]'  where supervisor.user_id = login.user_id") or die(mysqli_error($conn));
 
-    mysqli_query($conn,"update supervisor set supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]' ") or die(mysqli_error($conn));
-
-    echo '<script>window.alert("Thankyou for your feedback!")';
+    
+    header('location:supprofile.php');
+    
 }
 ?>
+<script>window.alert("Your information is successfully updated");</script>
 </form>
 
-</form>
+
 
 
 </div>
