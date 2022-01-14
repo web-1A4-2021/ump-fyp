@@ -1,0 +1,111 @@
+    .starrr {
+        display: inline-block; }
+    .starrr a {
+            font-size: 16px;
+            padding: 0 1px;
+            cursor: pointer;
+            color: #FFD119;
+            text-decoration: none; }
+        
+    .ratetable{
+    background-color: #e3f8f5;
+    }
+
+
+    .ratebutton{
+        background-color: #e3f8f5;;
+    }
+ 
+
+    .avgbutton {
+        background-color: rgb(226, 226, 226);
+        height:29px;
+        width: 140px;
+        margin-left: 1000px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        opacity: 0.7;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .avgbutton:hover {opacity: 1.3}
+
+    table{
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+
+
+    th{
+        background-color: #FDE992;
+        height: 50px;
+    }
+
+    td{
+
+        height: 30px;
+    }
+
+
+
+    caption{
+        padding-top: 50px;
+        float: left;
+    }
+
+   
+    table{
+        font-family: 'Montserrat';
+        font-size: 14px;
+
+    }
+
+
+    button{
+        height:30px;
+        width: 70px;
+        margin-left:100px
+    }
+
+    table .center td{
+        text-align: center;
+    }
+
+    .card {
+
+        display: table;
+        margin: 0px;
+        border: 1px solid cadetblue;
+        outline: 3px solid cadetblue;
+        outline-offset: 5px;
+        float: right;
+        height: 300px; 
+        width: 200px;
+        padding: 3px;
+        
+    }
+    table, td {
+                border: 1px solid black;
+                border-color:  #e3f8f5;;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 40%;
+            }
+
+            td {
+                padding: 7.5px;
+                width: 30%;
+                text-align: center;
+            }
+
+            table.center {
+                margin-left: auto; 
+                margin-right: auto;
+            }
+

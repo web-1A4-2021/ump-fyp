@@ -53,7 +53,7 @@ if (isset($_GET["logID"]))
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="#" class="button" name="home">Home</a></li>
+       <li> <a href="suphome.php" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
@@ -100,13 +100,10 @@ if (isset($_GET["logID"]))
                        echo '<td>' .$row["logdate"]. '</td></tr>';
                        echo '<tr><td id="right"> Meeting Activity: </td>' ;
                        echo '<td>' .$row["curactivity"]. '</td></tr>';
-                       echo '<tr><td id="right"> Next Meeting Activity: </td>' ;
-                       echo '<td>' .$row["nextactivity"]. '</td></tr>';
                        echo '<tr><td id="right"> Updated Report: </td>' ;
                        echo '<td><a href="supervisor/download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
-                       echo '<tr><td id="right"> Feedback: </td>' ;
-                       echo '<td><textarea id="feedback" name="logfeedback" placeholder="Write your feedback here.." style="height:200px"></textarea>';
-                       
+                       echo '<tr><td id="right"> Feedback from evaluator: </td>' ;
+                       echo '<td>' .$row["logfeedback"]. '</td></tr>';                       
                     }
                 }
                  
@@ -123,36 +120,14 @@ if (isset($_GET["logID"]))
  </table>
 
  
- <br><button type="back" onClick="myFunction">Back</button>
- <button type="update" name="update" >Submit</button>
+ <br><button type="back" id ="button" onClick="myFunction">Back</button>
 
  <script>
-     function myFuntion(){
-         window.location.href="supervisor/studentinfo.php";
+     function myFunction(){
+         window.location.href="studentinfo.php";
      }
 
-</script>
 
-<?php
-$conn = mysqli_connect("localhost", "root", "", "student");
-if (!$conn) {
-   die('Could not connect: ' . mysqli_connect_error());
-}
-
-if(isset($_POST["update"]))
-
-{
-
-    mysqli_query($conn,"update logbook set logfeedback='$_POST[logfeedback]' where logid='$idlog'") or die(mysqli_error($conn));
-
-    echo '<script>window.alert("Thankyou for your feedback!")';
-}
-else{
-    echo "No Result";
-}
-
-$conn->close();
-?>
 </form>
 
 

@@ -47,7 +47,7 @@ session_start();
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="#" class="button" name="home">Home</a></li>
+       <li> <a href="suphome.php" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>

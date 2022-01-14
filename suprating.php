@@ -1,58 +1,68 @@
-<?php
-session_start();
-$_SESSION['supid'] ='supid';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-sacale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="msapplication-tap-highlight" content="no">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
-        <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/ratinglayout.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-        <title>Supervisor Profile</title>
-        <style>
-   input{
-          width:50%;
-          height: 50px;
-          margin-top:30px;
-          padding-left: 20px;
-      }
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link rel="stylesheet" href="supervisor.css">
+        <link rel="stylesheet" href="starrr.css">
 
-      #right{
-
-padding-left: 100px;
-width: 20%;
-}
+ 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="starrr.js"></script>
+    
 
 
-        </style>
+     <title>Rate</title>
+       <style>
+          table, td {
+            border: 1px solid black;
+            border-color:  #e3f8f5;;
+          }
+
+          table {
+            border-collapse: collapse;
+            width: 40%;
+          }
+
+          td {
+            padding: 7.5px;
+            width: 30%;
+            text-align: center;
+          }
+
+          table.center {
+            margin-left: auto; 
+            margin-right: auto;
+          }
+          
+       </style>
     </head>
+
     <body>
-    <div class="header">
+      <div class="header">
         <div class ="inner_header">
             <div class="logo_container">
-            <h1><img src="umplogo.png" alt="imgheader">  Student FYP Management System </h1>
+               <h1><img src="umplogo.png" alt="imgheader"> Student FYP Management System </h1>
             </div>
-        <nav>
-          <li style="list-style-type:none;"><span ><a href="logout.php" style="color:#fff; " >Logout</a></span></li>
-</nav>
-
+          <nav>
+            <li><span><a href="logout.php">Logout</a></span></li>
+          </nav>
         </div>
-</div>
-
-<div class="row">
+      </div>
+      <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="#" class="button" name="home">Home</a></li>
+       <li> <a href="suphome.php" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
@@ -60,7 +70,7 @@ width: 20%;
     </div>
     <div class="column right">
 
-    <div class= ratetitle>
+   <div class= ratetitle>
       Shortlisted Top 10 Students 
    </div>
 
@@ -92,7 +102,6 @@ width: 20%;
        }
 
 ?>
-
 
 
 
@@ -165,20 +174,13 @@ function saverating(form) {
 }
 
 </script>
-
-
-
-
-
-
 </div>
 
 
-<footer id="footer">     
-                        <span> Copyright &copy; 2021 All Right Reserved</span>
-            </footer>
 
-    </body>
 
-    
+  
+
+</body>
+
 </html>

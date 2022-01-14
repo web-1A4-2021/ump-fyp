@@ -1,13 +1,13 @@
 <?php
 session_start();
 $_SESSION['st_id'] ='st_id';
-if (isset($_GET["studID"])) 
-{
-  $studentid = $_GET["studID"];
-} else
-{
- header("Location: studentinfo.php");
-}
+//if (isset($_GET["studID"])) 
+//{
+//  $studentid = $_GET["studID"];
+///} else
+//{
+// header("Location: studentinfo.php");
+//}
 
 ?>
 
@@ -55,60 +55,42 @@ if (isset($_GET["studID"]))
     </div>
     <div class="column right">
 
-    <br><h3>Student Profile</h3>
+    <br><h3>Announcement !!!</h3>
     <form>
 
         <table class="tb">
 
             
-            <tr>
-               <?php
-                $conn = mysqli_connect("localhost", "root", "", "student");
-                if (!$conn) {
-                   die('Could not connect: ' . mysqli_connect_error());
-             }
+            //<tr>
+             //  <?php
+           //     $conn = mysqli_connect("localhost", "root", "", "student");
+            //    if (!$conn) {
+             //      die('Could not connect: ' . mysqli_connect_error());
+            // }
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM fypstud WHERE st_id = '$studentid'";
-                   $result = $conn -> query($sql);
+              //     $sql = "SELECT * FROM fypstud WHERE st_id = '$studentid'";
+               //    $result = $conn -> query($sql);
 
-            if($result->num_rows > 0)
-                {
-                    while($row = $result -> fetch_assoc() )
-                    {
-                        echo '<br><td id="right"> Student ID &nbsp: </td>' ;
-                       echo '<td>' .$row["studID"]. '</td></tr>';
-                       echo '<tr><td id="right"> Name &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp: </td>' ;
-                       echo '<td>' .$row["studname"]. '</td></tr>';
-                       echo '<tr><td id="right"> Program &nbsp&nbsp&nbsp&nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["studprog"]. '</td></tr>';
-                       echo '<tr><td id="right"> Phone No. &nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["studphone"]. '</td></tr>';
-                       echo '<tr><td id="right"> Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["studemail"]. '</td></tr>';
-                       echo '<tr><td id="right"> FYP Status&nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["fypstatus"]. '</td></tr>';
-                    }
-                }
+       //     if($result->num_rows > 0)
+         //       {
+         //           while($row = $result -> fetch_assoc() )
+          //          {
+         //          }
+         //       }
           
-             else{
-                 echo "No Result";
-             }
+        //     else{
+         //        echo "No Result";
+        //     }
              
-             $conn->close();
-             ?>
+         //    $conn->close();
+        //     ?>
 
 
  </table>
 
  
- <br><button type="back" id ="button" onClick="myFunction">Back</button>
 
- <script>
-     function myFunction(){
-         window.location.href="studentinfo.php";
-     }
-</script>
 
 </form>
 
