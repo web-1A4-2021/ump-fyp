@@ -76,7 +76,7 @@
 
 <?php
     // Connecting with database
-       $conn = mysqli_connect("localhost", "root", "", "student");
+       $conn = mysqli_connect("localhost", "root", "", "studFYP");
  
     // Getting all students
        $result = mysqli_query($conn, "SELECT * FROM student");

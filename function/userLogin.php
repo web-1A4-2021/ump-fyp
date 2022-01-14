@@ -1,7 +1,7 @@
 <?php
 //connect to databse
 include_once '../include/config.php';
-session_start()
+session_start();
 
 $matricid = $_POST['matricid'];
 $password = $_POST['pwd'];

@@ -62,7 +62,7 @@ if (isset($_GET["studID"]))
             
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "student");
+                $conn = mysqli_connect("localhost", "root", "", "studFYP");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }

@@ -70,7 +70,7 @@ width: 20%;
             
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "student");
+                $conn = mysqli_connect("localhost", "root", "", "studFYP");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }
@@ -114,7 +114,7 @@ width: 20%;
 
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "student");
+$conn = mysqli_connect("localhost", "root", "", "studFYP");
 if (!$conn) {
    die('Could not connect: ' . mysqli_connect_error());
 }
