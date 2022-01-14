@@ -109,7 +109,7 @@ width: 20%;
  </table>
 
  
- <br><button type="update" name="update" >Update</button>
+ <br><button type="update" name="update" onClick="myFunction()">Update</button>
 
 
 
@@ -125,12 +125,16 @@ if(isset($_POST["update"]))
     
     mysqli_query($conn,"update login,supervisor set supervisor.supname='$_POST[name]', supervisor.supemail='$_POST[email]', supervisor.supphone='$_POST[phone]',supervisor.suproom='$_POST[suproom]'  where supervisor.user_id = login.user_id") or die(mysqli_error($conn));
 
-    
     header('location:supprofile.php');
+    
     
 }
 ?>
-<script>window.alert("Your information is successfully updated");</script>
+<script>
+function myFunction() {
+  alert("Your information Successfully updated!");
+}
+</script>
 </form>
 
 
