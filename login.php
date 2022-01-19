@@ -20,6 +20,7 @@
         <option value="ext">External User</option>
         <option value="sup">Supervisor</option>
         <option value="lec">Lecturer</option>
+        <option value="student">Student</option>
 
     </select>
     <br>
