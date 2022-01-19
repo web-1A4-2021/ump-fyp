@@ -46,6 +46,9 @@ if($check>0)
         //lecturer page
     }    
     elseif($data['userrole']=='std'){
+        $_SESSION['matricid'] = $matricid;
+		$_SESSION['userrole'] = "std";
+        header("location:../studenthome.php");
         //student page
     }
     else{
