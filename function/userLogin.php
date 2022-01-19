@@ -6,25 +6,53 @@ session_start();
 $matricid = $_POST['matricid'];
 $password = $_POST['pwd'];
 $usertype =$_POST['usertype'];
-$userid = $_POST['user_id'];
+//$userid = $_POST['user_id'];
 
-$login = mysqli_query($conn,"select * from login where matricid='$matricid' and password='$password'");
-$check = mysqli_num_rows($login);
+$login = mysqli_query($conn,"select * from userinfo where matricid='$matricid' and password='$password' and usertype='$usertype'");
+$check = mysqli_num_rows($login);//number of row
 
 if($check>0)
 {
     $data = mysqli_fetch_assoc($login);
-    //echo $data['matricid'];
-    header("location:../admin/admin.php");
+    if($data['userrole']=='adm')
+    {
+        $_SESSION['matricid'] = $matricid;
+		$_SESSION['userrole'] = "admin";
+        header("location:../admin/admin.php");//admin page
+    }
+    elseif($data['userrole']=='coo')
+    {
+        $_SESSION['matricid'] = $matricid;
+		$_SESSION['userrole'] = "coo";
+        header("location:../");// coordinator page
+    }
+    elseif($data['userrole']=='sup'){
+        $_SESSION['matricid'] = $matricid;
+		$_SESSION['userrole'] = "sup";
+        header("location:../suphome.php");//supervisor page
+    }
+    elseif($data['userrole']=='eva'){
+        $_SESSION['matricid'] = $matricid;
+		$_SESSION['userrole'] = "admin";
+        header("location:../evaluationpage.php");//evaluator page
+    }
+    elseif($data['userrole']=='fyp1'){
+        //fyp1 page
+    }
+    elseif($data['userrole']=='fyp2'){
+        //fyp2 page
+    }
+    elseif($data['userrole']=='lec'){
+        //lecturer page
+    }    
+    elseif($data['userrole']=='std'){
+        //student page
+    }
+    else{
+        header("location:../index.php");
+    }
 }
-if($check==1)
-{
-    $data = mysqli_fetch_assoc($login);
-    
-    $_SESSION['user']= $userid;
-    header("location:../suphome.php");
- 
-  
-    //echo $data['matricid'];
+else{
+    header("location:../index.php");
 }
     
