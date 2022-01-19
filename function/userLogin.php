@@ -59,7 +59,7 @@ else{
     header("location:../index.php");
 }
 
-if($check==2)
+if($check==3)
 {
     $data = mysqli_fetch_assoc($login);
     
