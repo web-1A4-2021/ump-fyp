@@ -27,4 +27,17 @@ if($check==1)
   
     //echo $data['matricid'];
 }
+
+if($check==2)
+{
+    $data = mysqli_fetch_assoc($login);
+    
+    $_SESSION['user']= $userid;
+    header("location:../studenthome.php");
+ 
+  
+    //echo $data['matricid'];
+}
+
+
     
