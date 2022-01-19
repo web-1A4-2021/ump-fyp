@@ -21,7 +21,7 @@
         <option value="sup">Supervisor</option>
         <option value="lec">Lecturer</option>
         <option value="std">Student</option>
-        <option value="coo">coordinator</option>
+        <option value="coo">Coordinator</option>
         
        
 
