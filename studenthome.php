@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$_SESSION['User'] =$matricid;
+$_SESSION['User'] =$userid;
 ?>
 <!DOCTYPE html>
 <html lang="en">

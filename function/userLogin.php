@@ -46,6 +46,7 @@ if($check>0)
         //lecturer page
     }    
     elseif($data['userrole']=='std'){
+        
         $userid=$_POST['userid'];
         $_SESSION['User'] = $userid;
 		$_SESSION['userrole'] = "std";
