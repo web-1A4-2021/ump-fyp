@@ -46,7 +46,8 @@ if($check>0)
         //lecturer page
     }    
     elseif($data['userrole']=='std'){
-        $_SESSION['matricid'] = $matricid;
+        $userid=$_POST['userid'];
+        $_SESSION['User'] = $userid;
 		$_SESSION['userrole'] = "std";
         ?><script>window.alert("Login Successfully !");
         location="home.php";</script><?php
