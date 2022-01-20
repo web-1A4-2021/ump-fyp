@@ -1,11 +1,13 @@
 <?php 
 session_start();
 
+
     if(isset($_POST['enrol1']))
     {
-        $id=$_SESSION['User'];
+      //$id=$_SESSION['User'];
+      $_SESSION['User'] =$matricid;
 
-     $ret=mysqli_query($con,"insert into fyp(fypid) values('$id')");
+     $ret=mysqli_query($conn,"insert into fyp1(fypid) values('$matricid')");
     if($ret)
     {
     $_SESSION['msg']="Enroll Successfully !!";

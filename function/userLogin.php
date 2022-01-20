@@ -48,7 +48,8 @@ if($check>0)
     elseif($data['userrole']=='std'){
         $_SESSION['matricid'] = $matricid;
 		$_SESSION['userrole'] = "std";
-        header("location:../studenthome.php");
+        ?><script>window.alert("Login Successfully !");
+        location="home.php";</script><?php
         //student page
     }
     else{
