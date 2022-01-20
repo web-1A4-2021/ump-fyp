@@ -50,7 +50,7 @@ if($check>0)
         $_SESSION['User'] = $matricid;
 		$_SESSION['userrole'] = "std";
 
-        $ret=mysqli_query($conn,"insert into student(userid) values('"$_POST['userid']"') where matricid =$matricid ");
+       /* $ret=mysqli_query($conn,"insert into student(userid) values(".$_POST['userid'].") where matricid =$matricid ");
         if($ret)
        {
         ?>
@@ -61,7 +61,7 @@ if($check>0)
         else{
 
             echo "Error";
-        }
+        }*/
     }
     else{
         header("location:../index.php");
