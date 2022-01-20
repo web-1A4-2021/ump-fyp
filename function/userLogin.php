@@ -53,11 +53,11 @@ if($check>0)
        /* $ret=mysqli_query($conn,"insert into student(userid) values(".$_POST['userid'].") where matricid =$matricid ");
         if($ret)
        {
-        ?>
+        */?>
         <script>window.alert("Login Successfully");
        location="studenthome.php";</script>
         <?php
-
+/*
         else{
 
             echo "Error";
