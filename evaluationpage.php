@@ -56,7 +56,7 @@ session_start();
                 <li><a href="#" class="button"  name="report">Rate</a></li>
             </ul>
         </div>
-    </div> 
+     
 
   <div class="column right">
         <form>
@@ -172,6 +172,7 @@ session_start();
 
 
 
+    </div>
     </div>
 
 
