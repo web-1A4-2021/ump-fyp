@@ -57,7 +57,7 @@ $_SESSION['User'] =$matricid;
         <p>Enrolment Options.</p>
         <p>Final Year Project 1 (FYP1)</p><br><br><br>
         <p>Self Enrolment (Student)</p><br>
-        <form action="studentenrol1.php" method="post">
+        <form action="enrol1.php" method="post">
         <p><button type="submit" name="enrol1">Enrol Me</button></a></p>
         </form>
       </div>
