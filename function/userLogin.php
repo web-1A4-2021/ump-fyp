@@ -55,7 +55,7 @@ if($check>0)
        {
         ?>
         <script>window.alert("Login Successfully");
-       location="home.php";</script>
+       location="studenthome.php";</script>
         <?php
 
         else{
