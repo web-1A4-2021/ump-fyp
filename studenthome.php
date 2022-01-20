@@ -1,7 +1,6 @@
 <?php 
-session_start();
-$_SESSION['User'] =$userid;
-?>
+//require_once('connect.php');
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,19 +40,21 @@ $_SESSION['User'] =$userid;
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="studenthome.php" class="button" name="studenthome">Home</a></li>
-        <li><a href="studentlogbook.php" class="button"  name="studentlogbook">Logbook</a></li>
-       <li><a href="supervisorinfo.php" class="button" name="svprofile">Supervisor Info</a></li>
-        <li><a href="status.php" class="button" name="studentstatus">Status</a></li>
-       <li><a href="studentprofile.php" class="button"  name="studentprofile">Profile</a></li>
-       <li><a href="studentrate.php" class="button"  name="studentrate">Rate</a></li>
+       <li> <a href="studenthome.php" class="button" name="home">Home</a></li>
+        <li><a href="logbook.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="status.php" class="button" name="rate">Status</a></li>
+       <li><a href="studentprofile.php" class="button"  name="report">Profile</a></li>
+       <li><a href="studentrate.php" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
         <br>
 
 
+<?php if(isset($_SESSION['User']))
+    {?>
         
-        <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?> </h2><br>
+        <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?></h2><br>
         <p>Enrolment Options.</p>
         <p>Final Year Project 1 (FYP1)</p><br><br><br>
         <p>Self Enrolment (Student)</p><br>
@@ -63,6 +64,13 @@ $_SESSION['User'] =$userid;
       </div>
     </div>
         
+  <?php  }
+    else
+    {
+        header("location:login.php");
+    }
+
+?>
 
 
 
