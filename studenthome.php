@@ -31,7 +31,7 @@ $_SESSION['User'] =$matricid;
             <div class="logo_container">
             <img src="umplogo.png" alt="imgheader">  
             </div><div class="textheader"><h1>Student FYP Management System</h1><div><nav>
-                <li><span><button><?php echo '<a href="login.php?logout">Logout</a>';?></button></a></span></li>
+                <li><span><button><?php echo '<a href="index.php?logout">Logout</a>';?></button></a></span></li>
       </nav>
 </div></div>
             
@@ -53,7 +53,7 @@ $_SESSION['User'] =$matricid;
 
 
         
-        <div align="center"><h2> Welcome </h2><br>
+        <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?> </h2><br>
         <p>Enrolment Options.</p>
         <p>Final Year Project 1 (FYP1)</p><br><br><br>
         <p>Self Enrolment (Student)</p><br>
