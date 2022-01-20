@@ -50,9 +50,19 @@ if($check>0)
         $userid=$_POST['userid'];
         $_SESSION['User'] = $userid;
 		$_SESSION['userrole'] = "std";
-        ?><script>window.alert("Login Successfully !");
-        location="home.php";</script><?php
-        //student page
+
+        $ret=mysqli_query($conn,"insert into student(userid) values('$userid') ");
+        if($ret)
+       {
+        ?>
+        <script>window.alert("Login Successfully");
+       location="home.php";</script>
+        <?php
+
+        else{
+
+            echo "Error";
+        }
     }
     else{
         header("location:../index.php");
