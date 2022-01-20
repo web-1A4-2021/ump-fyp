@@ -47,11 +47,10 @@ if($check>0)
     }    
     elseif($data['userrole']=='std'){
         
-        $userid=$_POST['userid'];
-        $_SESSION['User'] = $userid;
+        $_SESSION['User'] = $matricid;
 		$_SESSION['userrole'] = "std";
 
-        $ret=mysqli_query($conn,"insert into student(userid) values('$userid') ");
+        $ret=mysqli_query($conn,"insert into student(userid) values('"$_POST['userid']"') where matricid =$matricid ");
         if($ret)
        {
         ?>
