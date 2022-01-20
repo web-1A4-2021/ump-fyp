@@ -52,10 +52,9 @@ session_start();?>
         <br>
 
 
-<?php if(isset($_SESSION['User']))
-    {?>
+
         
-        <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?></h2><br>
+        <div align="center"><h2>Welcome</h2><br>
         <p>Enrolment Options.</p>
         <p>Final Year Project 1 (FYP1)</p><br><br><br>
         <p>Self Enrolment (Student)</p><br>
@@ -65,13 +64,6 @@ session_start();?>
       </div>
     </div>
         
-  <?php  }
-    else
-    {
-        header("location:index.php");
-    }
-
-?>
 
 
 
