@@ -49,19 +49,9 @@ if($check>0)
         
         $_SESSION['User'] = $matricid;
 		$_SESSION['userrole'] = "std";
+        header("location:../studenthome.php");//student page
 
-       /* $ret=mysqli_query($conn,"insert into student(userid) values(".$_POST['userid'].") where matricid =$matricid ");
-        if($ret)
-       {
-        */?>
-        <script>window.alert("Login Successfully");
-       location="studenthome.php";</script>
-        <?php
-/*
-        else{
 
-            echo "Error";
-        }*/
     }
     else{
         header("location:../index.php");
