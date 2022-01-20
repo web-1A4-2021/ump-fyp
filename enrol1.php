@@ -7,14 +7,14 @@ session_start();
       //$id=$_SESSION['User'];
       $_SESSION['User'] =$matricid;
 
-     $ret=mysqli_query($conn,"insert into fyp1(fypid) values('$matricid')");
+     $ret=mysqli_query($conn,"insert into fypstudent(matricid) values('$matricid') ");
     if($ret)
     {
     $_SESSION['msg']="Enroll Successfully !!";
     ?>
                 
     <script>window.alert("Enrol Successfully");
-    location="home2.php";</script>
+    location="studenthome.php";</script>
     
     <?php
 }
@@ -24,7 +24,7 @@ else
   ?>
                 
     <script>window.alert("Your already enrol the FYP 1");
-    location="home2.php";</script>
+    location="studenthome.php";</script>
     
     <?php
 }
@@ -35,7 +35,7 @@ else{
   ?>
                 
     <script>window.alert("Your already enrol the FYP 1");
-    location="home2.php";</script>
+    location="studenthome.php";</script>
     
     <?php
 }

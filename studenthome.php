@@ -15,7 +15,7 @@ session_start();?>
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-        <title>Home</title>
+        <title>Student-Home</title>
         <style>
        table.center{
            text-align: center;
@@ -68,7 +68,7 @@ session_start();?>
   <?php  }
     else
     {
-        header("location:login.php");
+        header("location:index.php");
     }
 
 ?>
