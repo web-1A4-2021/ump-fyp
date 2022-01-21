@@ -1,4 +1,5 @@
 <?php 
+include_once '../include/config.php';
 session_start();
 
 
@@ -8,6 +9,7 @@ session_start();
       $_SESSION['User'] =$matricid;
 
      $ret=mysqli_query($conn,"insert into fypstudent(matricid) values('$matricid') ");
+
     if($ret)
     {
     $_SESSION['msg']="Enroll Successfully !!";
