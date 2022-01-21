@@ -22,6 +22,8 @@
         <option value="lec">Lecturer</option>
         <option value="coo">Coordinator</option>
         <option value="std">Student</option>
+        <option value="coo">Coordinator</option>
+        <option value="eva">Evaluator</option>
         
        
 

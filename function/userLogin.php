@@ -46,10 +46,12 @@ if($check>0)
         //lecturer page
     }    
     elseif($data['userrole']=='std'){
-        $_SESSION['matricid'] = $matricid;
+        
+        $_SESSION['User'] = $matricid;
 		$_SESSION['userrole'] = "std";
-        header("location:../studenthome.php");
-        //student page
+        header("location:../studenthome.php");//student page
+
+
     }
     else{
         header("location:../index.php");
@@ -57,17 +59,6 @@ if($check>0)
 }
 else{
     header("location:../index.php");
-}
-
-if($check==2)
-{
-    $data = mysqli_fetch_assoc($login);
-    
-    $_SESSION['user']= $userid;
-    header("location:../studenthome.php");
- 
-  
-    //echo $data['matricid'];
 }
 
 
