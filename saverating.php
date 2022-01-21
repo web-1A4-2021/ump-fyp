@@ -3,7 +3,7 @@
 $studentid = $_POST["studentid"];
 $rating = $_POST["rating"];
 
-$conn = mysqli_connect("localhost", "root", "", "test");
+$conn = mysqli_connect("localhost", "root", "", "studFYP");
  
 mysqli_query($conn, "INSERT INTO rating (studentid, rating) VALUES ('$studentid', '$rating')");
 
