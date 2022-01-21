@@ -66,8 +66,8 @@ session_start();?>
         
   <?php  }
     else
-    {
-        header("location:index.php");
+    {   echo "got error";
+        //header("location:studenthome.php");
     }
 
 ?>

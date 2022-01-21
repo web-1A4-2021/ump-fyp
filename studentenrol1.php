@@ -2,21 +2,19 @@
 include_once './include/config.php';
 session_start();
 
-
     if(isset($_POST['enrol1']))
     {
-      //$id=$_SESSION['User'];
-      $_SESSION['User'] =$matricid;
+        $matricid=$_SESSION['User'];
 
-     $ret=mysqli_query($conn,"insert into fypstudent(matricid) values('$matricid') ");
-
+     $ret=mysqli_query($conn,"insert into fypstudent(matricid) values('$matricid')");
     if($ret)
     {
     $_SESSION['msg']="Enroll Successfully !!";
     ?>
                 
     <script>window.alert("Enrol Successfully");
-    location="studenthome.php";</script>
+    location="studenthome.php";
+    button.disabled = true</script>
     
     <?php
 }
