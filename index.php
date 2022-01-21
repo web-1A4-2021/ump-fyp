@@ -18,7 +18,6 @@
     <label for="usertype">User Type</label>
     <select name="usertype" id="usertype">
         <option value="ext">External User</option>
-        <option value="sup">Supervisor</option>
         <option value="lec">Lecturer</option>
         <option value="coo">Coordinator</option>
         <option value="std">Student</option>

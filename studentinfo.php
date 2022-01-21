@@ -76,13 +76,13 @@ session_start();
              }
               
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT st_id,studID,studname,fypstatus FROM fypstud"; // WHERE userID = $user";
+                   $sql = "SELECT student.studentid,student.matricid,student.studentname,userinfo.userrole FROM userinfo,student";
                    $result = $conn -> query($sql);
 
                    if($result->num_rows > 0){
                        while($row = $result -> fetch_assoc() )
                     {
-                       echo '<tr><td>' .$row["studID"]. '</td>';
+                       echo '<tr><td>' .$row["matricid"]. '</td>';
                         echo '<td>' .$row["studname"]. '</td>';
                        echo '<td>' .$row["fypstatus"]. '</td>';
                        echo '<td><a href="studprofile.php?studID='.$row["st_id"].'">View</a<td>';
