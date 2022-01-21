@@ -1,5 +1,5 @@
 <?php 
-include_once 'location:../include/config.php';
+include_once './include/config.php';
 session_start();?>
 <!DOCTYPE html>
 <html lang="en">
