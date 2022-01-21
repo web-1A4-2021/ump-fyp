@@ -29,7 +29,7 @@ if($check>0)
     elseif($data['userrole']=='sup'){
         $_SESSION['matricid'] = $matricid;
 		$_SESSION['userrole'] = "sup";
-        header("location:../suphome.php");//supervisor page
+        header("location: ../suphome.php");//supervisor page
     }
     elseif($data['userrole']=='eva'){
         $_SESSION['matricid'] = $matricid;
@@ -54,7 +54,7 @@ if($check>0)
 
     }
     else{
-        header("location:../index.php");
+        header("location:../index..php");
     }
 }
 else{

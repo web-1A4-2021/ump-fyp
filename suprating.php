@@ -79,7 +79,7 @@
        $conn = mysqli_connect("localhost", "root", "", "studFYP");
  
     // Getting all students
-       $result = mysqli_query($conn, "SELECT * FROM student");
+       $result = mysqli_query($conn, "SELECT * FROM studentlist");
 
     // Displaying each student
        while ($row = mysqli_fetch_object($result)) {

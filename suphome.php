@@ -1,13 +1,7 @@
 <?php
+
 session_start();
-$_SESSION['User'] ='user_id';
-//if (isset($_GET["studID"])) 
-//{
-//  $studentid = $_GET["studID"];
-///} else
-//{
-// header("Location: studentinfo.php");
-//}
+
 
 ?>
 
@@ -55,36 +49,15 @@ $_SESSION['User'] ='user_id';
     </div>
     <div class="column right">
 
-    <br><h3>Announcement !!!</h3>
+ 
+     
+        
+       <br><h3>Announcement !!!</h3>
+   
     <form>
 
         <table class="tb">
 
-            
-            //<tr>
-             //  <?php
-           //     $conn = mysqli_connect("localhost", "root", "", "student");
-            //    if (!$conn) {
-             //      die('Could not connect: ' . mysqli_connect_error());
-            // }
-                
-                  //$user = $_SESSION['id'];
-              //     $sql = "SELECT * FROM fypstud WHERE st_id = '$studentid'";
-               //    $result = $conn -> query($sql);
-
-       //     if($result->num_rows > 0)
-         //       {
-         //           while($row = $result -> fetch_assoc() )
-          //          {
-         //          }
-         //       }
-          
-        //     else{
-         //        echo "No Result";
-        //     }
-             
-         //    $conn->close();
-        //     ?>
 
 
  </table>
