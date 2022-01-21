@@ -61,16 +61,5 @@ else{
     header("location:../index.php");
 }
 
-if($check==3)
-{
-    $data = mysqli_fetch_assoc($login);
-    
-    $_SESSION['user']= $userid;
-    header("location:../studenthome.php");
- 
-  
-    //echo $data['matricid'];
-}
-
 
     
