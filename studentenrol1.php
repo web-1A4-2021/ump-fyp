@@ -6,38 +6,27 @@ session_start();
     {
         $matricid=$_SESSION['User'];
 
-     $ret=mysqli_query($conn,"insert into fypstudent(matricid) values('$matricid')");
+     $ret=mysqli_query($conn,"insert into fypstudent1(matricid) values('$matricid')");
     if($ret)
     {
-    $_SESSION['msg']="Enroll Successfully !!";
     ?>
                 
     <script>window.alert("Enrol Successfully");
-    location="studenthome.php";
-    button.disabled = true</script>
+    location="studenthome2.php";</script>
     
     <?php
 }
 else
 {
-  $_SESSION['msg']="Welcome back" . $_SESSION['User'];
-  ?>
-                
-    <script>window.alert("Your already enrol the FYP 1");
-    location="studenthome.php";</script>
-    
-    <?php
-}
+   echo "Error"
+   header("location:../studenthome2.php");
 }
 
+    }
+
 else{
-  $_SESSION['msg']="Welcome " . $_SESSION['User'];
-  ?>
-                
-    <script>window.alert("Your already enrol the FYP 1");
-    location="studenthome.php";</script>
-    
-    <?php
+  
+  header("location:../studenthome.php");
 }
 
 
