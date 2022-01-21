@@ -18,7 +18,7 @@ session_start();
 }
 else
 {
-   echo "Error"
+   echo "Error";
    header("location:../studenthome2.php");
 }
 

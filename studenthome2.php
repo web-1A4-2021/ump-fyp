@@ -54,7 +54,7 @@ session_start();?>
 <?php if(isset($_SESSION['User']))
     {?>
         
-        <div align="center"><h2><?php  echo ' Welcome Back  ' . $_SESSION['User'].'<br/>'; ?></h2><br>
+        <div align="center"><h2><?php  echo ' Enroll Successfully ,  ' . $_SESSION['User'].'<br/>'; ?></h2><br>
         
   <?php  }
     else
