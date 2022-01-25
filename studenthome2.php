@@ -40,7 +40,7 @@ session_start();?>
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="studenthome.php" class="button" name="home">Home</a></li>
+    <li> <a href="studenthome.php" class="button" name="home">Home</a></li>
         <li><a href="studentlogbook.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="Status.html" class="button" name="rate">Status</a></li>
@@ -54,15 +54,7 @@ session_start();?>
 <?php if(isset($_SESSION['User']))
     {?>
         
-        <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?></h2><br>
-        <p>Enrolment Options.</p>
-        <p>Final Year Project 1 (FYP1)</p><br><br><br>
-        <p>Self Enrolment (Student)</p><br>
-        <form action="studentenrol1.php" method="post">
-        <p><button type="submit" name="enrol1">Enrol Me</button></a></p>
-        </form>
-      </div>
-    </div>
+        <div align="center"><h2><?php  echo ' Enroll Successfully ,  ' . $_SESSION['User'].'<br/>'; ?></h2><br>
         
   <?php  }
     else
