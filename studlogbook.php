@@ -1,11 +1,11 @@
 <?php
 session_start();
-
+include_once './include/config.php';
 if (isset($_GET["logID"])) 
 {
   $idlog = $_GET["logID"];
   
-} else
+} else 
 {
  header("Location: studentinfo.php");
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include_once './include/config.php';
 
 ?>
 
@@ -71,22 +71,18 @@ width: 20%;
             
             <tr>
                <?php 
-
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
-                if (!$conn) {
-                   die('Could not connect: ' . mysqli_connect_error());
-             }
               
                 
                   
-                   $sql = "SELECT supervisor.*, userinfo.userid FROM userinfo,supervisor where supervisor.sup_id ="'$_SESSION['matricid']'"";
+                   $sql = "SELECT * FROM supervisor where sup_id ='".$_SESSION['matricid']."'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
                 {
                     while($row = $result -> fetch_assoc() )
                     {
-                    
+                        echo '<br><tr><td id="right"> Staff ID: </td>' ;
+                       echo '<td >'.$row["sup_id"].' </td></tr>';
                        echo '<br><tr><td id="right" > Name: </td>' ;
                        echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Name" name="name" value="'.$row["supname"].'" </td></tr>';
                        echo '<tr><td id="right"> Email: </td>' ;
@@ -127,7 +123,7 @@ if(isset($_POST["update"]))
 
 {
     
-    mysqli_query($conn,"update login,supervisor set supervisor.supname='$_POST[name]', supervisor.supemail='$_POST[email]', supervisor.supphone='$_POST[phone]',supervisor.suproom='$_POST[suproom]'  where supervisor.user_id = login.user_id") or die(mysqli_error($conn));
+    mysqli_query($conn,"update supervisor set sup_id= '$_POST[supid]',supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]'  where sup_id ='".$_SESSION['matricid']."'") or die(mysqli_error($conn));
 
     header('location:supprofile.php');
     

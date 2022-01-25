@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once './include/config.php';
 
 ?>
 
@@ -70,13 +71,9 @@ session_start();
             </tr>
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
-                if (!$conn) {
-                   die('Could not connect: ' . mysqli_connect_error());
-             }
-              
-                  //$user = $_SESSION['id'];
-                   $sql = "SELECT studentid,matricid,studentname,fypstatus FROM student";
+                
+                
+                   $sql = "SELECT studentid, matricid,studentname,fypstatus,svid FROM student WHERE svid='".$_SESSION['matricid']."'";
                    $result = $conn -> query($sql);
 
                    if($result->num_rows > 0){

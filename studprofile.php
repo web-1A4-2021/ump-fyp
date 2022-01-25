@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once './include/config.php';
 if (isset($_GET["studID"])) 
 {
   $studentid = $_GET["studID"];
