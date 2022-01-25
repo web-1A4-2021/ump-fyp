@@ -68,7 +68,7 @@ if (isset($_GET["studID"]))
              }
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM fypstud WHERE st_id = '$studentid'";
+                   $sql = "SELECT * FROM student WHERE studentid = '$studentid'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -76,13 +76,13 @@ if (isset($_GET["studID"]))
                     while($row = $result -> fetch_assoc() )
                     {
                         echo '<br><td id="right"> Student ID &nbsp: </td>' ;
-                       echo '<td>' .$row["studID"]. '</td></tr>';
+                       echo '<td>' .$row["matricid"]. '</td></tr>';
                        echo '<tr><td id="right"> Name &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp: </td>' ;
-                       echo '<td>' .$row["studname"]. '</td></tr>';
+                       echo '<td>' .$row["studentname"]. '</td></tr>';
                        echo '<tr><td id="right"> Program &nbsp&nbsp&nbsp&nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["studprog"]. '</td></tr>';
+                       echo '<td>' .$row["pcode"]. '</td></tr>';
                        echo '<tr><td id="right"> Phone No. &nbsp&nbsp: </td>' ;
-                       echo '<td>' .$row["studphone"]. '</td></tr>';
+                       echo '<td>' .$row["phone"]. '</td></tr>';
                        echo '<tr><td id="right"> Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: </td>' ;
                        echo '<td>' .$row["studemail"]. '</td></tr>';
                        echo '<tr><td id="right"> FYP Status&nbsp&nbsp: </td>' ;

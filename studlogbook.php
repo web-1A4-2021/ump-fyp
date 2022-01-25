@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['User'] ='user_id';
 
 if (isset($_GET["logID"])) 
 {
@@ -76,7 +75,7 @@ if (isset($_GET["logID"]))
               
                 
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM logbook  where logid= '$idlog' ";
+                   $sql = "SELECT * FROM logbook  where logbookid= '$idlog' ";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -94,16 +93,14 @@ if (isset($_GET["logID"]))
                      //  echo '<td>' .$row["studID"]. '</td></tr>';
                     //   echo '<tr><td id="right"> Supervisor: </td>' ;
                    //    echo '<td>' .$row["supname"]. '</td></tr>';
-                       echo '<tr><td id="right"> Time: </td>' ;
-                       echo '<td>' .$row["logtime"]. '</td></tr>';
                        echo '<tr><td id="right"> Date: </td>' ;
-                       echo '<td>' .$row["logdate"]. '</td></tr>';
+                       echo '<td>' .$row["date"]. '</td></tr>';
                        echo '<tr><td id="right"> Meeting Activity: </td>' ;
-                       echo '<td>' .$row["curactivity"]. '</td></tr>';
+                       echo '<td>' .$row["logdesc"]. '</td></tr>';
                        echo '<tr><td id="right"> Updated Report: </td>' ;
-                       echo '<td><a href="supervisor/download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
+                       echo '<td><a href="supervisor/download.php?file=' .$row['file']. '">'.$row['file'].'</a></td>';
                        echo '<tr><td id="right"> Feedback from evaluator: </td>' ;
-                       echo '<td>' .$row["logfeedback"]. '</td></tr>';                       
+                       echo '<td>' .$row["logbookfeedback"]. '</td></tr>';                       
                     }
                 }
                  
@@ -120,13 +117,13 @@ if (isset($_GET["logID"]))
  </table>
 
  
- <br><button type="back" id ="button" onClick="myFunction">Back</button>
+ <br><button type="back"  onClick="myFunction">Back</button>
 
  <script>
-     function myFunction(){
+     function myFuntion(){
          window.location.href="studentinfo.php";
      }
-
+</script>
 
 </form>
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['User'] ='user_id';
+
 
 if (isset($_GET["studID"])) 
 {
@@ -78,13 +78,13 @@ if (isset($_GET["studID"]))
              die('Could not connect: ' . mysqli_connect_error());
        }
         
-       $sql = "SELECT studname FROM fypstud WHERE st_id = '$studentid'";
+       $sql = "SELECT studentname FROM student WHERE studentid = '$studentid'";
        $result = $conn -> query($sql);
          if($result->num_rows > 0)
          {
              while($row = $result -> fetch_assoc() )
              {
-                echo '<br><h4>Name : ' .$row["studname"]. '</h4><br>';
+                echo '<br><h4>Name : ' .$row["studentname"]. '</h4><br>';
                }
            }
              else{
@@ -97,7 +97,7 @@ if (isset($_GET["studID"]))
         <table  id="tb1" border="1" >
 
         <?php
-            $sql = "SELECT logid, week FROM logbook WHERE studid = '$studentid'" ;
+            $sql = "SELECT logbookid, week FROM logbook WHERE studentid = '$studentid'" ;
             $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -109,7 +109,7 @@ if (isset($_GET["studID"]))
             
               <tr>
              <td><?php echo 'Week ' .$row["week"].''; ?></td>
-             <td><a href="studlogbook.php?logID=<?php echo $row['logid'] ?>">View</a></td>
+             <td><a href="studlogbook.php?logID=<?php echo $row['logbookid'] ?>">View</a></td>
               </tr>
               
                     

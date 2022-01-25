@@ -6,7 +6,7 @@ session_start();
 $matricid = $_POST['matricid'];
 $password = $_POST['pwd'];
 $usertype =$_POST['usertype'];
-//$userid = $_POST['user_id'];
+
 
 $login = mysqli_query($conn,"select * from userinfo where matricid='$matricid' and password='$password' and usertype='$usertype'");
 $check = mysqli_num_rows($login);//number of row
@@ -54,7 +54,7 @@ if($check>0)
 
     }
     else{
-        header("location:../index..php");
+        header("location:../index.php");
     }
 }
 else{

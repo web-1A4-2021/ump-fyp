@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -69,15 +70,16 @@ width: 20%;
 
             
             <tr>
-               <?php
+               <?php 
+
                 $conn = mysqli_connect("localhost", "root", "", "studFYP");
                 if (!$conn) {
                    die('Could not connect: ' . mysqli_connect_error());
              }
               
                 
-                  //$user = $_SESSION['id'];
-                   $sql = "SELECT supervisor.*, login.user_id FROM login,supervisor where supervisor.user_id = login.user_id";
+                  
+                   $sql = "SELECT supervisor.*, userinfo.userid FROM userinfo,supervisor where supervisor.sup_id ="'$_SESSION['matricid']'"";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -96,13 +98,15 @@ width: 20%;
                     }
                 }
                  
-
              
              else{
                  echo "No Result";
              }
              
              $conn->close();
+            
+
+             
              ?>
 
 
