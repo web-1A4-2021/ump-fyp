@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 19, 2022 at 11:19 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- Host: 127.0.0.1
+-- Generation Time: Jan 25, 2022 at 02:28 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `studFYP`
+-- Database: `studfyp`
 --
 
 -- --------------------------------------------------------
@@ -51,7 +51,11 @@ INSERT INTO `userinfo` (`userid`, `matricid`, `password`, `userrole`, `usertype`
 (9, 'CB19106', 'student', 'fyp1', 'std'),
 (10, 'EU10001', 'external', 'ext', 'ext'),
 (11, 'EV10001', 'evaluator', 'eva', 'lec'),
-(12, 'CB10121', 'student', 'std', 'std');
+(12, 'CB10121', 'student', 'std', 'std'),
+(13, 'CD20003', 'abc123', 'std', 'std'),
+(14, 'KA1112', 'super1', 'sup', 'lec'),
+(15, 'LA1113', 'super', 'sup', 'lec'),
+(16, 'LS10004', 'super', 'sup', 'lec');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +75,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

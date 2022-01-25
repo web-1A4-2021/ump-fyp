@@ -2,12 +2,17 @@
 session_start();
 include_once './include/config.php';
 
+$sql = "SELECT fypstatus, count(*) as number FROM student GROUP BY fypstatus ORDER BY svid='".$_SESSION['matricid']."' " ;
+$result = mysqli_query($conn, $sql);
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         
+    <title>Supervisor Profile</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-sacale=1.0, user-scalable=no">
@@ -19,7 +24,31 @@ include_once './include/config.php';
         <link rel="stylesheet" href="css/alert.css">
         <script>  src="https://code.jquery.com/jquery-3.6.0.js"</script>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        <title>Supervisor Profile</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current',{'packages' :['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart()
+            {
+                var data = google.visualization.arrayToDataTable([
+                    ['fypstatus','Number'],
+                    <?php 
+                    while($row = mysqli_fetch_array($result))
+                    {
+                        echo "['".$row["fypstatus"]."', ".$row["number"]."],";
+                    }
+                    ?>
+                    
+
+                ]);
+
+                var options= {
+                    title: ''
+                };
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data,options);
+            }
+            </script>
         <style>
    input{
           width:50%;
@@ -57,13 +86,15 @@ width: 20%;
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
-       <li><a href="#" class="button"  name="report">Report</a></li>
+       <li><a href="supreport.php" class="button"  name="report">Report</a></li>
     </div>
     <div class="column right">
     
 
 
-    <br><h3></h3>
+    <br><h3>Percentage of FYP1 and FYP 2 students </h3>
+    <div id="piechart" style="width: 900px; height 500px;"></div>
+
    
 
   
