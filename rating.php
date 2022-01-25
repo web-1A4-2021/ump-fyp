@@ -47,7 +47,8 @@
       <div class="header">
         <div class ="inner_header">
             <div class="logo_container">
-               <h1><img src="umplogo.png" alt="imgheader"> Student FYP Management System </h1>
+               <img src="umplogo.png" alt="imgheader">
+               <h1>Student FYP Management System</h1>
             </div>
           <nav>
             <li><span><a href="logout.php">Logout</a></span></li>
@@ -64,7 +65,7 @@
        $conn = mysqli_connect("localhost", "root", "", "studFYP");
  
     // Getting all students
-       $result = mysqli_query($conn, "SELECT * FROM student");
+       $result = mysqli_query($conn, "SELECT * FROM studentlist");
 
     // Displaying each student
        while ($row = mysqli_fetch_object($result)) {
@@ -117,7 +118,7 @@
    </table>
   
  <?php
-    mysqli_query($conn, "UPDATE student SET average_rating = '$average_rating' WHERE id = '" .$row->id. "' ");
+    mysqli_query($conn, "UPDATE studentlist SET average_rating = '$average_rating' WHERE id = '" .$row->id. "' ");
  ?>
 
 </div>
