@@ -17,14 +17,15 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="msapplication-tap-highlight" content="no">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
-      <link href="layout.css" type="text/css" rel="stylesheet" media="screen,projection">
+      <link href="css/ratinglayout.css" type="text/css" rel="stylesheet" media="screen,projection">
 
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
 
-
+   
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+   
    
       function drawChart() {
 
@@ -32,7 +33,7 @@
           ['name', 'average_rating'],
       
          <?php
-         $sql = "SELECT name, average_rating FROM student";
+         $sql = "SELECT name, average_rating FROM studentlist";
          $fire = mysqli_query($con,$sql);
           while ($result = mysqli_fetch_assoc($fire)) {
             echo"['".$result['name']."',".$result['average_rating']."],";
@@ -41,11 +42,11 @@
          ?>
         ]);
 
-        
+       
         var options = {
-          title: 'Average rating of students'
+              title: 'Average rating of students'
         };
-        
+       
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
@@ -56,10 +57,12 @@
     </script>
   </head>
 
-      <div class="header">
+  
+      <div class="header" >
         <div class ="inner_header">
             <div class="logo_container">
-               <h1><img src="umplogo.png" alt="imgheader"> Student FYP Management System </h1>
+               <img src="umplogo.png" alt="imgheader">
+               <h1>Student FYP Management System</h1>
             </div>
           <nav>
             <li><span><a href="logout.php">Logout</a></span></li>
@@ -68,11 +71,24 @@
       </div>
 
 
-  <body>
- 
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-   
-  </body>
+  
+    
+    <div id="piechart" style="width: 700px; height: 450px; margin:0 auto; "></div>
+  
+    
+    <div class= "ratebutton">
+        <button class="backbutton" style="margin-left:170px" onclick="history.back()">◁ Back</button>
+    </div>
+
+
+
+    <footer id="footer">     
+            <span> Copyright &copy; 2021 All Right Reserved</span>
+    </footer>
+
+    
+
+  
 
 </html>
 
