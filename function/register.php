@@ -3,15 +3,18 @@
 include_once "../include/config.php";
 
 $matricid = $_POST["matricid"];
-$usertype = $_POST["userrole"];
-$userrole = $_POST["usertype"];
+$userrole = $_POST["userrole"];
+$usertype = $_POST["usertype"];
+"<script>console.log('$matricid');</script>";
 
-$register = "INSERT INTO userinfo (matricid, userrole,usertype) VALUES ($matricid, $userrole, $usertype)";
-if(mysqli_query($conn,$register))
+$query = "INSERT INTO userinfo (matricid, userrole,usertype) VALUES ('$matricid', '$userrole', '$usertype');";
+$register = mysqli_query($conn,$query);
+if($register)
 {
-    echo "<script>console.log('$matricid');</script>";
+    echo "<script>Alert(User '$matricid' Registered);</script>";
+    header("location:../admin/admin.php?new=true");
 }
 else
 {
-    echo "Error: " . $register . "<br>" . mysqli_error($conn);
+    echo "<br>Error: ".$register."<br>".mysqli_error($conn);
 }

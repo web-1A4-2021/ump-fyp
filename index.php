@@ -12,14 +12,18 @@
 <form action="./function/userLogin.php" method="post">
     <p>UMP FYP</p>
     <label for="matricid">Matric ID</label>
-    <input type="text" name="matricid" id="matricid" placeholder="User ID"> <br>
+    <input type="text" name="matricid" id="matricid" placeholder="Matric ID"> <br>
     <label for="pwd">Password</label>
     <input type="password" name="pwd" id="pwd" placeholder='Password'> <br>
     <label for="usertype">User Type</label>
     <select name="usertype" id="usertype">
+        //! Only 3 type of user [ext,std,lec]
         <option value="ext">External User</option>
+        //* External User : Evaluator
         <option value="lec">Lecturer</option>
+        //* Lecturer : Admin, Coordinator, Supervisor, Evaluator, Lecturer
         <option value="std">Student</option>
+        //* Student : FYP1, FYP2, Student
     </select>
     <br>
     <input class='button' type="submit" value="Login">

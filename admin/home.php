@@ -1,6 +1,7 @@
 <?php
+//* Connect to database
 include_once '../include/config.php';
-$q = mysqli_query($conn, "SELECT * FROM userinfo ");
+$q = mysqli_query($conn, "SELECT * FROM userinfo ORDER BY userid ASC");
 $view = mysqli_num_rows($q);
 if($view == 0)
 {
