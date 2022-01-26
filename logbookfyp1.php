@@ -40,10 +40,10 @@ session_start();?>
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
-        <li><a href="logbookfyp12.php" class="button"  name="studinfo">Logbook</a></li>
-       <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
-        <li><a href="studentstatus.php" class="button" name="status">Status</a></li>
+    <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
        <li><a href="profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>

@@ -14,7 +14,7 @@ session_start();?>
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-        <title>Home</title>
+        <title>Supervisor Information</title>
         <style>
        table.center{
            text-align: center;
@@ -30,7 +30,7 @@ session_start();?>
             <div class="logo_container">
             <img src="umplogo.png" alt="imgheader">  
             </div><div class="textheader"><h1>Student FYP Management System</h1><div><nav>
-                <li><span><button><?php echo '<a href="index.php?logout">Logout</a>';?></button></a></span></li>
+                <li><span><a href="logout.php"><button>Logout</button></a></span></li>
       </nav>
 </div></div>
             
@@ -51,21 +51,63 @@ session_start();?>
         <br>
 
 
-<?php if(isset($_SESSION['User']))
-    {?>
-        
-        <div align="center"><h2><?php  echo ' Enroll Successfully ,  ' . $_SESSION['User'].'<br/>'; ?></h2><br>
-        
-  <?php  }
-    else
-    {   echo "got error";
-        //header("location:studenthome.php");
-    }
+    <div align="center"><h3>Supervisor Info</h3><br><br>
 
+    <?php
+
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$matricid=$_SESSION['User'];
+ 
+$sql = "SELECT supname,supemail,supphone,suproom FROM supervisor";
+$result = $conn->query($sql);
+ 
+if ($result->num_rows > 0) {
+
+  while($row = $result->fetch_assoc()) {
+?><table border="1" align="center">
+
+  <tr>
+    <td>Name</td>
+    <td><?php echo $row["supname"];?></td>
+    
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><?php echo $row["supemail"];?></td>
+    
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><?php echo $row["supphone"];?></td>
+    
+  </tr>
+    <tr>
+    <td>Title</td>
+    <td><?php echo $row["suproom"];?></td>
+    
+  </tr>
+    </table> 
+ 
+<?php
+  }
+} else { ?>
+    
+    <p align ="center"><?php echo "No data in databases";?></p> <?php
+}
+ 
+
+//$conn->close();
 ?>
+  
+    </div>
 
+</div>
 
-
+ 
 
 
 <footer id="footer">     
@@ -75,3 +117,16 @@ session_start();?>
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

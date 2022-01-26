@@ -42,7 +42,7 @@ session_start();?>
     <ul>
        <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
         <li><a href="logbookfyp1.php" class="button"  name="studinfo">Logbook</a></li>
-       <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
+       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="Status.html" class="button" name="rate">Status</a></li>
        <li><a href="#" class="button"  name="report">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
