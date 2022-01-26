@@ -1,4 +1,7 @@
-<?php include_once '../include/config.php' ?>
+<?php 
+include_once '../include/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,43 +27,31 @@
 <div class="row">
     <div class="column left">
         <ul>
-            <li> <a href="./admin.php" class="button" name="home">Home</a></li>
-            <li> <a href="./" class="button"  name="">User</a></li>
-            <li> <a href="./" class="button"  name="">Report</a></li>
+            <li> <a href="./admin.php?home=true" class="button" name="home">Home</a></li>
+            <li> <a href="./admin.php?new=true" class="button"  name="">New User</a></li>
+            <li> <a href="./admin.php?report=true" class="button"  name="">Report</a></li>
         </ul>
     </div>
     <div class="column right">
     <br><h3>Administrator</h3>
     <?php
-        $q = mysqli_query($conn, "SELECT * FROM userinfo ");
-        $view = mysqli_num_rows($q);
-        if($view == 0)
-        {
-            $output = 'No Search Result';
-        }else
-        {
-            echo "<table>";
-            echo "<tr>
-                <th>User ID</th>
-                <th>User Role</th>
-                <th>User Type</th>
-                </tr>";
-            while($row = mysqli_fetch_array($q))
-            {
-                echo "<tr>
-                    <td>".$row['user_id']."</td>
-                    <td>".$row['user_role']."</td>
-                    <td>".$row['user_type']."</td>
-                    </tr>";
-            }
-            echo "</table>";
-        }
+    if(isset($_GET['home']))
+    {
+    include './home.php';
+    }
+    else if(isset($_GET['new']))
+    {
+        include './new.php';
+    }
+    else if(isset($_GET['report']))
+    {
+        include './report.php';
+    }
     ?>
     <form>
         <table class="tb">
             <tr>
             <?php
-                
             ?>
         </table>
         <br><button type="back" id ="button" onClick="window.location.href='./admin.php';">Back</button>

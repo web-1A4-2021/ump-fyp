@@ -19,13 +19,7 @@
     <select name="usertype" id="usertype">
         <option value="ext">External User</option>
         <option value="lec">Lecturer</option>
-        <option value="coo">Coordinator</option>
         <option value="std">Student</option>
-        <option value="coo">Coordinator</option>
-        <option value="eva">Evaluator</option>
-        
-       
-
     </select>
     <br>
     <input class='button' type="submit" value="Login">
