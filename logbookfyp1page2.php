@@ -14,7 +14,7 @@ session_start();?>
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-        <title>Home</title>
+        <title>Logbook</title>
         <style>
        table.center{
            text-align: center;
@@ -30,7 +30,7 @@ session_start();?>
             <div class="logo_container">
             <img src="umplogo.png" alt="imgheader">  
             </div><div class="textheader"><h1>Student FYP Management System</h1><div><nav>
-                <li><span><button><?php echo '<a href="index.php?logout">Logout</a>';?></button></a></span></li>
+                <li><span><a href="logout.php"><button>Logout</button></a></span></li>
       </nav>
 </div></div>
             
@@ -41,31 +41,75 @@ session_start();?>
     <div class="column left">
     <ul>
     <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
-        <li><a href="logbookfyp1.php" class="button"  name="studinfo">Logbook</a></li>
+        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
-        <li><a href="Status.html" class="button" name="rate">Status</a></li>
-       <li><a href="#" class="button"  name="report">Profile</a></li>
+        <li><a href="studentstatus.php" class="button" name="status">Status</a></li>
+       <li><a href="profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
         <br>
 
 
-<?php if(isset($_SESSION['User']))
-    {?>
-        
-        <div align="center"><h2><?php  echo ' Enroll Successfully ,  ' . $_SESSION['User'].'<br/>'; ?></h2><br>
-        
-  <?php  }
-    else
-    {   echo "got error";
-        //header("location:studenthome.php");
-    }
+    <div align="center"><h3>Logbook Activities Every Week</h3><br>
 
-?>
+      
 
 
 
+
+    <form>
+
+<table class="center">
+
+    <tr>
+        <th>WeeK</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+       <?php
+           
+
+     
+            
+           $sql = "select week from logbook where matricid='".$_SESSION['User']."'"; 
+           $result = $conn -> query($sql);
+
+           if ($result !== false && $result->num_rows > 0) {
+
+            while($row = $result->fetch_assoc()) {
+          ?>
+              
+          
+          
+                 <tr>
+                  <td><?php echo $row['week'] ?></td>
+                  <td><a href="viewlogbook.php?id=<?php echo $row['week'] ?>">View</a></td>
+                  <td><a href="deletelogbook.php?week=<?php echo $row['week'] ?>">Delete</a></td></tr>
+           
+          <?php
+            }
+          } else { ?>
+              
+              <p align ="center"><?php echo "No data in databases";?></p> <?php
+          }
+           
+          
+          $conn->close();
+          ?>
+
+
+</table>
+<br><br>
+</form>
+<a href="logbookfyp1.php"><input type="submit" value="Add your activities" /></a>
+    </div>
+
+
+</div>
+
+ 
 
 
 <footer id="footer">     

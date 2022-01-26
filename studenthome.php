@@ -40,8 +40,8 @@ session_start();?>
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="studenthome.php" class="button" name="home">Home</a></li>
-        <li><a href="studentlogbook.php" class="button"  name="studinfo">Logbook</a></li>
+       <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp1.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="supervisorinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="Status.html" class="button" name="rate">Status</a></li>
        <li><a href="#" class="button"  name="report">Profile</a></li>
@@ -52,6 +52,8 @@ session_start();?>
 
 
 <?php if(isset($_SESSION['User']))
+
+
     {?>
         
         <div align="center"><h2><?php  echo ' Welcome ' . $_SESSION['User'].'<br/>'; ?></h2><br>
