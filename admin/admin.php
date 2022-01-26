@@ -1,7 +1,7 @@
 <?php 
+//* Connect to database
 include_once '../include/config.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,15 +37,15 @@ include_once '../include/config.php';
     <?php
     if(isset($_GET['home']))
     {
-    include './home.php';
+        include './home.php';//* Display user list
     }
     else if(isset($_GET['new']))
     {
-        include './new.php';
+        include './new.php';//* Register new user
     }
     else if(isset($_GET['report']))
     {
-        include './report.php';
+        include './report.php';//* View report
     }
     ?>
     <form>
@@ -59,6 +59,21 @@ include_once '../include/config.php';
 </div>
 <footer id="footer">
     <?php include '../include/footer.php';?>     
-</footer>    
+</footer>
+<style>
+    form{
+        text-align:center;
+        height:80vh;
+    }
+    form *{
+        margin:10px;
+        padding: 5px 0px 5px 0px;
+    }
+    canvas{
+        border: 2px solid #000000;
+        margin: 5px;
+        text-align:center;
+    }
+</style>    
 </body>
 </html>
