@@ -44,6 +44,9 @@
             margin-left: auto; 
             margin-right: auto;
           }
+          .left ul li .button{
+      height:20%;
+  }
           
        </style>
     </head>

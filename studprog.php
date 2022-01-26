@@ -42,7 +42,9 @@ if (isset($_GET["studID"]))
         margin-left:100px;
          font-family: 'Montserrat';
         }
-
+        .left ul li .button{
+      height:20%;
+  }
 
         </style>
     </head>

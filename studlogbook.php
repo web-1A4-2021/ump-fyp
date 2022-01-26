@@ -32,7 +32,9 @@ if (isset($_GET["logID"]))
          
           padding-left: 20px;
        }
-
+       .left ul li .button{
+      height:20%;
+  }
 
         </style>
     </head>

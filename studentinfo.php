@@ -29,6 +29,9 @@ include_once './include/config.php';
             width: 80%;
 
         }
+        .left ul li .button{
+      height:20%;
+  }
 
 
         </style>

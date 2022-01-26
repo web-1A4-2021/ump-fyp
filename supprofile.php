@@ -33,6 +33,9 @@ include_once './include/config.php';
 padding-left: 100px;
 width: 20%;
 }
+.left ul li .button{
+      height:20%;
+  }
 
 
         </style>

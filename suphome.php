@@ -21,8 +21,20 @@ include_once './include/config.php';
 
         <title>Student Profile</title>
         <style>
-       
+           table.center{
+           text-align: center;
+           padding-left:100px;
+       }
+       table{
+           margin-left:100px;
+            text-align: center;
+            width: 80%;
 
+        }
+        .left ul li .button{
+      height:20%;
+  }
+        
 
         </style>
     </head>
@@ -53,11 +65,42 @@ include_once './include/config.php';
  
      
         
-       <br><h3>Announcement !!!</h3>
+       <br><h3>Announcement !!!</h3><br>
    
     <form>
+        
+    <table class="center">
 
-        <table class="tb">
+<tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Content</th>
+  
+</tr>
+<tr>
+    <?php
+        $sql = "SELECT * FROM announcement" ;
+                $result = $conn -> query($sql);
+
+                if($result->num_rows > 0){
+                    while($row = $result -> fetch_assoc() )
+                 {
+                    echo '<tr><td>' .$row["Title"]. '</td>';
+                     echo '<td>' .$row["Date"]. '</td>';
+                   echo '<td>' .$row["Content"]. '</td>';
+                  
+              }
+
+          }
+          else{
+              echo "No Result";
+          }
+          $conn->close();
+          ?>
+
+
+
+        
 
 
 
