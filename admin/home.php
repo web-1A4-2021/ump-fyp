@@ -1,6 +1,6 @@
 <?php
 //* Connect to database
-include_once '../include/config.php';
+include_once "../include/config.php";
 $q = mysqli_query($conn, "SELECT * FROM userinfo ORDER BY userid ASC");
 $view = mysqli_num_rows($q);
 if($view == 0)
@@ -13,6 +13,8 @@ if($view == 0)
         <th>User ID</th>
         <th>User Role</th>
         <th>User Type</th>
+        <th></th>
+        <th></th>
         </tr>";
     while($row = mysqli_fetch_array($q))
     {
@@ -20,6 +22,9 @@ if($view == 0)
             <td>".uId($row).$row['userid']."</td>
             <td>".uRole($row)."</td>
             <td>".uType($row)."</td>
+            <td><a class='edit' href='./admin..php?'>Edit</a></td>
+            <td><a class='del'
+                href=delete()>Delete</a></td>
             </tr>";
     }
     echo "</table>";
@@ -84,3 +89,5 @@ function uType($row)
             break;
     }
 }
+//! under development
+?>

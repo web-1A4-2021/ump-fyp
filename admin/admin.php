@@ -74,6 +74,12 @@ include_once '../include/config.php';
         margin: 5px;
         text-align:center;
     }
+    .edit{
+        color:#00AC9F;
+    }
+    .del{
+        color:#DF0024;
+    }
 </style>    
 </body>
 </html>
