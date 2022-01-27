@@ -9,20 +9,23 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
         <link href="css/ratinglayout.css" type="text/css" rel="stylesheet" media="screen,projection">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="starrr.css">
- 
+       
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="starrr.js"></script>
-    
-
+        
 
      <title>Rate</title>
        <style>
           table, td {
             border: 1px solid black;
-            border-color:  #e3f8f5;;
+            border-color:  #e3f8f5;
           }
 
           table {
@@ -32,7 +35,7 @@
 
           td {
             padding: 7.5px;
-            width: 30%;
+            width: 20%;
             text-align: center;
           }
 
@@ -44,6 +47,7 @@
     </head>
 
     <body>
+      
       <div class="header">
         <div class ="inner_header">
             <div class="logo_container">
@@ -56,6 +60,13 @@
         </div>
       </div>
 
+      
+          <div class="alert alert-primary alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Important!</strong> Please give rating to all students. Rate and submit only once for each student.
+         </div>
+     
+      
    <div class= ratetitle>
       Shortlisted Top 10 Students 
    </div>
@@ -88,6 +99,7 @@
        }
 
 ?>
+
 
 
 
@@ -173,5 +185,6 @@ function saverating(form) {
             <span> Copyright &copy; 2021 All Right Reserved</span>
     </footer>
 
+    
 </body>
 </html>
