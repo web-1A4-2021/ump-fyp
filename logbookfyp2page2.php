@@ -63,17 +63,20 @@ session_start();?>
 <table class="center">
 
     <tr>
-        <th>WeeK</th>
-        <th>View</th>
-        <th>Delete</th>
+        <th>Week</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>File</th>
+        <th>Feedback from Supervisor</th>
+        <th>Update</th>
     </tr>
     <tr>
        <?php
            
 
      
-            
-           $sql = "select week from logbook2 where matricid='".$_SESSION['User']."'"; 
+           $matricid=$_SESSION['User'];
+           $sql = "select * from logbook2 where matricid='".$_SESSION['User']."'"; 
            $result = $conn -> query($sql);
 
            if ($result !== false && $result->num_rows > 0) {
@@ -83,10 +86,14 @@ session_start();?>
               
           
           
-                 <tr>
-                  <td><?php echo $row['week'] ?></td>
-                  <td><a href="viewlogbook.php?id=<?php echo $row['week'] ?>">View</a></td>
-                  <td><a href="deletelogbook.php?week=<?php echo $row['week'] ?>">Delete</a></td></tr>
+              <tr>
+                   
+                   <td><?php echo $row['week'] ?></td>
+                   <td><?php echo $row['date'] ?></td>
+                   <td><?php echo $row['logdesc'] ?></td>
+                   <td><?php echo $row['file'] ?></td>
+                   <td><?php echo $row['logbookfeedback'] ?></td>
+                   <td><a href="logbookfyp2update.php?id=<?php echo $row['logbookid'] ?>">Update</a></td></tr>
            
           <?php
             }
