@@ -51,69 +51,95 @@ session_start();?>
         <br>
 
 
-    <div align="center"><h3>Logbook Activities Every Week</h3><br>
+    <div align="center"><h3>Logbook Activities Every Week</h3><br><br>
+<form action="" method="post">
+        <table>
 
-      
+        <?php
+         $sql = "SELECT fyptitle,week,date,logdesc FROM logbook where matricid='".$_SESSION['User']."'";
+         $result = $conn -> query($sql);
 
+         if($result->num_rows > 0){
 
+            while($row = $result -> fetch_assoc() ){
 
-
-    <form>
-
-<table class="center">
-
-    <tr>
-        
-        <th>Week</th>
-        <th>Date</th>
-        <th>Description</th>
-        <th>File</th>
-        <th>Feedback from Supervisor</th>
-        <th>Update</th>
-    </tr>
-    <tr>
-       <?php
-           
-
-     
-           $matricid=$_SESSION['User'];
-           $sql = "select * from logbook where matricid='".$_SESSION['User']."'"; 
-           $result = $conn -> query($sql);
-
-           if ($result !== false && $result->num_rows > 0) {
-
-            while($row = $result->fetch_assoc()) {
-          ?>
+                echo '<tr>
+  <td><label>Final Year Project Title :</label></td>
+  <td><input type="text" name="fyptitle" value="'.$row["fyptitle"].'" required></td></tr>';
+  echo '<tr>
+  <td><label>Week :</label></td>
+  <td><input type="text" name="week" value="'.$row["week"].'" required></td></tr>';
+                
+  echo '<tr>
+  <td><label>Date :</label></td>
+  <td><input type="text" name="date" placeholder="yyyy-mm-dd"  value="'.$row["date"].'" required></td></tr>';
+  echo '<tr>
+  <td><label>Activity Description :</label></td>
+  <td><input type="text" name="logdesc"  value="'.$row["logdesc"].'" required size="100"></textarea></td>
+</tr>';/*
+'<tr>
+  <td><lable>Upload :</label></td>
+  <td><input type="file" name="file"/ value="'.$row["file"].'"></td>
+</tr>';*/
               
-          
-          
-                 <tr>
-                   
-                  <td><?php echo $row['week'] ?></td>
-                  <td><?php echo $row['date'] ?></td>
-                  <td><?php echo $row['logdesc'] ?></td>
-                  <td><?php echo $row['file'] ?></td>
-                  <td><?php echo $row['logbookfeedback'] ?></td>
-                  <td><a href="logbookfyp1update.php?id=<?php echo $row['logbookid'] ?>">Update</a></td></tr>
-           
-          <?php
+
+
             }
-          } else { ?>
-              
-              <p align ="center"><?php echo "No data in databases";?></p> <?php
-          }
-           
-          
-          $conn->close();
-          ?>
 
 
-</table>
-<br><br>
-</form>
-<a href="logbookfyp1.php"><input type="submit" value="Add your activities" /></a>
+
+         }
+
+         else{
+            echo "No Result";
+        }
+        
+        $conn->close();
+
+
+
+        ?>
+<br>
+<tr>
+  <td></td>
+  <td></td>
+</tr>
+
+    
+ </table><br><br><br><br>
+ <br><button type="update" name="update" onClick="myFunction()">Update</button>
+ 
+ <?php
+$conn = mysqli_connect("localhost", "root", "", "studfyp");
+if (!$conn) {
+   die('Could not connect: ' . mysqli_connect_error());
+}
+
+if(isset($_POST["update"]))
+
+{
+    
+    mysqli_query($conn,"update logbook set fyptitle='$_POST[fyptitle]',week='$_POST[week]', date='$_POST[date]', logdesc='$_POST[logdesc]' where matricid ='".$_SESSION['User']."'") or die(mysqli_error($conn));
+
+    ?>
+   <script>
+    location="logbookfyp1page2.php";</script>
+
+<?php
+    
+    
+}
+?>
+<script>
+function myFunction() {
+  alert("Your information Successfully updated!");
+}
+</script>
+
+ 
+    </form>
+  
     </div>
-
 
 </div>
 
