@@ -14,7 +14,7 @@ session_start();?>
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-        <title>Logbook</title>
+        <title>Supervisor Information</title>
         <style>
        table.center{
            text-align: center;
@@ -44,68 +44,73 @@ session_start();?>
         <li><a href="logbookfyp2page2.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="studentsvinfofyp2.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="studentfyp2status.php" class="button" name="status">Status</a></li>
-       <li><a href="studentfyp2profile.php" class="button"  name="profile">Profile</a></li>
+        <li><a href="studentfyp2profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
         <br>
 
 
-    <div align="center"><h3>Logbook Activities Every Week</h3><br>
+    <div align="center"><h3>Supervisor Info</h3><br><br>
 
-      
-
-
+    <?php
 
 
-    <form>
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-<table class="center">
+$matricid=$_SESSION['User'];
+ 
+$sql = "SELECT sup_id,supname,supemail,supphone,suproom FROM supervisor";
+$result = $conn->query($sql);
+ 
+if ($result->num_rows > 0) {
 
+  while($row = $result->fetch_assoc()) {
+?><table align="center">
+
+<tr>
+    <td>Supervisor ID :</td>
+    <td><?php echo $row["sup_id"];?></td>
+    
+  </tr>
+
+
+<tr>
+    <td>Name :</td>
+    <td><?php echo $row["supname"];?></td>
+    
+  </tr>
+  <tr>
+    <td>Email :</td>
+    <td><?php echo $row["supemail"];?></td>
+    
+  </tr>
+  <tr>
+    <td>Phone :</td>
+    <td><?php echo $row["supphone"];?></td>
+    
+  </tr>
     <tr>
-        <th>WeeK</th>
-        <th>View</th>
-        <th>Delete</th>
-    </tr>
-    <tr>
-       <?php
-           
+    <td>Room :</td>
+    <td><?php echo $row["suproom"];?></td>
+    
+  </tr>
+    </table> 
+ 
+<?php
+  }
+} else { ?>
+    
+    <p align ="center"><?php echo "No data in databases";?></p> <?php
+}
+ 
 
-     
-            
-           $sql = "select week from logbook2 where matricid='".$_SESSION['User']."'"; 
-           $result = $conn -> query($sql);
-
-           if ($result !== false && $result->num_rows > 0) {
-
-            while($row = $result->fetch_assoc()) {
-          ?>
-              
-          
-          
-                 <tr>
-                  <td><?php echo $row['week'] ?></td>
-                  <td><a href="viewlogbook.php?id=<?php echo $row['week'] ?>">View</a></td>
-                  <td><a href="deletelogbook.php?week=<?php echo $row['week'] ?>">Delete</a></td></tr>
-           
-          <?php
-            }
-          } else { ?>
-              
-              <p align ="center"><?php echo "No data in databases";?></p> <?php
-          }
-           
-          
-          $conn->close();
-          ?>
-
-
-</table>
-<br><br>
-</form>
-<a href="logbookfyp2.php"><input type="submit" value="Add your activities" /></a>
+//$conn->close();
+?>
+  
     </div>
-
 
 </div>
 
@@ -119,3 +124,7 @@ session_start();?>
 
     </body>
 </html>
+
+
+
+
