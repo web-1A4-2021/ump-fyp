@@ -145,7 +145,12 @@ width: 20%;
                          
 
                        }
-                      
+                       
+                       ?>
+                        
+                        <br><tr><td><button type="submit" name="enrol2" onClick="myFunction()">Enrol FYP2</button></td></tr>
+                       
+                       <?php
                     }
 
 
@@ -161,24 +166,37 @@ width: 20%;
                  echo "No Result";
              }
              
-
-
              $conn->close();
             
 
              
              ?>
 
- 
 
-                       <tr><td id="right">
-                       <form action="studentenrol1.php" method="post"><br><br>
-                       <p><button type="submit" name="enrol2">Enrol FYP2</button></a></p>
-                       </form></td></tr>
-                       
  </table>
 
- 
+<?php
+$conn = mysqli_connect("localhost", "root", "", "studfyp");
+if (!$conn) {
+   die('Could not connect: ' . mysqli_connect_error());
+}
+
+if(isset($_POST["enrol2"]))
+
+{
+    
+    mysqli_query($conn,"insert into studentfyp2 (fypid,matricid,studentname,studentemail,pcode,phone,semester) select fypid,matricid,studentname,studentemail,pcode,phone,semester from studentfyp1 where matricid='".$_SESSION['User']."'");
+
+    header('location:studenthome2.php');
+    
+    
+}
+?>
+<script>
+function myFunction() {
+  alert("Your Enrol FYP 2 Successfully");
+}
+</script>
 
 
 

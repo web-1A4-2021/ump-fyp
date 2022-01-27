@@ -44,7 +44,7 @@ session_start();?>
         <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
-       <li><a href="profile.php" class="button"  name="profile">Profile</a></li>
+       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
