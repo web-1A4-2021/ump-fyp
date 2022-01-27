@@ -56,11 +56,11 @@ session_start();?>
         <table>
         <tr>
   <td><label>Final Year Project Title :</label></td>
-  <td><input type="text" name="fyptitle"></td>
+  <td><input type="text" name="fyptitle" required></td>
 </tr>
         <tr>
   <td><label>Week :</label></td>
-  <td><select name="week">
+  <td><select name="week" required>
                  <option value="You need to update. Go to View.">Select Week</option>
                  <option value="1">Week 1</option>
                  <option value="2">Week 2</option>
@@ -79,11 +79,11 @@ session_start();?>
 </tr>
 <tr>
   <td><label>Date :</label></td>
-  <td><input type="text" name="date" placeholder="yyyy-mm-dd"></td>
+  <td><input type="text" name="date" placeholder="yyyy-mm-dd" required></td>
 </tr>
 <tr>
   <td><label>Activity Description :</label></td>
-  <td><textarea name="logdesc" row="200" cols="80"></textarea></td>
+  <td><textarea name="logdesc" row="200" cols="80" required></textarea></td>
 </tr>
 <tr>
   <td><lable>Upload :</label></td>

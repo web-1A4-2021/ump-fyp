@@ -64,8 +64,11 @@ session_start();?>
 
     <tr>
         <th>WeeK</th>
-        <th>View</th>
-        <th>Delete</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>File</th>
+        <th>Feedback from Supervisor</th>
+        <th>Update</th>
     </tr>
     <tr>
        <?php
@@ -73,7 +76,7 @@ session_start();?>
 
      
             
-           $sql = "select week from logbook where matricid='".$_SESSION['User']."'"; 
+           $sql = "select week,date,logdesc,file,logbookfeedback from logbook where matricid='".$_SESSION['User']."'"; 
            $result = $conn -> query($sql);
 
            if ($result !== false && $result->num_rows > 0) {
@@ -85,8 +88,11 @@ session_start();?>
           
                  <tr>
                   <td><?php echo $row['week'] ?></td>
-                  <td><a href="viewlogbook.php?id=<?php echo $row['week'] ?>">View</a></td>
-                  <td><a href="deletelogbook.php?week=<?php echo $row['week'] ?>">Delete</a></td></tr>
+                  <td><?php echo $row['date'] ?></td>
+                  <td><?php echo $row['logdesc'] ?></td>
+                  <td><?php echo $row['file'] ?></td>
+                  <td><?php echo $row['logbookfeedback'] ?></td>
+                  <td><a href="viewlogbook.php?id=<?php echo $row['week'] ?>">View</a></td></tr>
            
           <?php
             }
