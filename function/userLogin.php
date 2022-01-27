@@ -27,14 +27,9 @@ if($check>0)
     {
         $_SESSION['matricid'] = $matricid;
 		$_SESSION['userrole'] = "coo";
-<<<<<<< Updated upstream
-        header("location:../search_student.php");//* coordinator page
-=======
         //header("location: ../search_student.php");//* coordinator page
         echo "<script>window.location.href='../search_student.php';</script>";
 
-        
->>>>>>> Stashed changes
     }
     else if($data['userrole']=='sup'){
         $_SESSION['matricid'] = $matricid;
