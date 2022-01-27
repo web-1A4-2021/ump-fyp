@@ -82,7 +82,7 @@ session_start();
                                                 
                                                 <tr>
                                                 <?php
-                                                    $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                                                    $conn = mysqli_connect("localhost", "root", "", "studfyp");
                                                     if (!$conn)    
                                                     {
                                                     die('Could not connect: ' . mysqli_connect_error());
@@ -117,7 +117,7 @@ session_start();
                                                         //  echo '<tr><td id="right"> Updated Report: </td>' ;
                                                         //  echo '<td><a href="supervisor/download.php?file=' .$row['filename']. '">'.$row['filename'].'</a></td>';
                                                         echo '<tr><td id="right"> Feedback: </td>' ;
-                                                        echo '<td><textarea id="feedback" name="logfeedback" placeholder="Write your feedback here.." style="height:200px"></textarea>';
+                                                        echo '<td><textarea id="feedback" name="logbookfeedback" placeholder="Write your feedback here.." style="height:200px"></textarea>';
                                                         
                                                         }
                                                     }
@@ -149,7 +149,7 @@ session_start();
                         
 
                 <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                $conn = mysqli_connect("localhost", "root", "", "studfyp");
                 if (!$conn) {
                 die('Could not connect: ' . mysqli_connect_error());
                 }
@@ -158,7 +158,7 @@ session_start();
 
                 {
 
-                    mysqli_query($conn,"update logbook set logfeedback='$_POST[logfeedback]' ") or die(mysqli_error($conn));
+                    mysqli_query($conn,"update logbook set logbookfeedback='$_POST[logbookfeedback]' ") or die(mysqli_error($conn));
 
                     echo '<script>window.alert("Thankyou for your feedback!")';
                 }

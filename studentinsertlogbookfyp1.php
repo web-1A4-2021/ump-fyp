@@ -33,9 +33,46 @@ else
   ?>
                 
     <script>window.alert("Have Error");
-    location="logbook.php";</script>
+    location="logbookfyp1page2.php";</script>
     
     <?php
+}
+}
+
+else if(isset($_POST['insertlogbook2']))
+{
+    $matricid=$_SESSION['User'];
+    $fyptitle=$_POST["fyptitle"];
+    $week=$_POST["week"];
+    $date=$_POST["date"];
+    $logdesc=$_POST["logdesc"];
+    $file=$_POST["file"];
+
+    
+
+ $ret=mysqli_query($conn,"insert into logbook2(fyptitle,week,date,logdesc,file,matricid) values('$fyptitle','$week','$date','$logdesc','$file','$matricid')");
+if($ret)
+{
+   // $ret2=mysqli_query($conn,"insert into logbook(fypid) select fypid from studentfyp1 where matricid='".$_SESSION['User']."'");
+    
+
+//$_SESSION['msg']="Enroll Successfully !!";
+?>
+            
+<script>window.alert("Insert Successfully");
+location="logbookfyp2page2.php";</script>
+
+<?php
+}
+else
+{
+//$_SESSION['msg']="Welcome back" . $_SESSION['User'];
+?>
+            
+<script>window.alert("Have Error");
+location="logbookfyp1page2.php";</script>
+
+<?php
 }
 }
 
@@ -44,7 +81,7 @@ else{
   ?>
                 
     <script>window.alert("Fail");
-    location="logbook.php";</script>
+    location="#";</script>
     
     <?php
 }

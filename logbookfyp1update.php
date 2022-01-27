@@ -52,43 +52,53 @@ session_start();?>
 
 
     <div align="center"><h3>Logbook Activities Every Week</h3><br><br>
-<form action="studentinsertlogbookfyp1.php" method="post">
+<form action="" method="post">
         <table>
-        <tr>
+
+        <?php
+         $sql = "SELECT fyptitle,week,date,logdesc FROM logbook where logbookid='" . $_GET['id'] . "'";
+         $result = $conn -> query($sql);
+
+         if($result->num_rows > 0){
+
+            while($row = $result -> fetch_assoc() ){
+
+                echo '<tr>
   <td><label>Final Year Project Title :</label></td>
-  <td><input type="text" name="fyptitle" required></td>
-</tr>
-        <tr>
+  <td><input type="text" name="fyptitle" value="'.$row["fyptitle"].'" required></td></tr>';
+  echo '<tr>
   <td><label>Week :</label></td>
-  <td><select name="week" required>
-                 <option value="You need to update. Go to Update.">Select Week</option>
-                 <option value="1">Week 1</option>
-                 <option value="2">Week 2</option>
-                 <option value="3">Week 3</option>
-                 <option value="4">Week 4</option>
-                 <option value="5">Week 5</option>
-                 <option value="6">Week 6</option>
-                 <option value="7">Week 7</option>
-                 <option value="8">Week 9</option>
-                 <option value="9">Week 10</option>
-                 <option value="10">Week 11</option>
-                 <option value="11">Week 12</option>
-                 <option value="12">Week 13</option>
-                 <option value="13">Week 15</option>
-                </select></td>
-</tr>
-<tr>
+  <td><input type="text" name="week" value="'.$row["week"].'" required></td></tr>';
+                
+  echo '<tr>
   <td><label>Date :</label></td>
-  <td><input type="text" name="date" placeholder="yyyy-mm-dd" required></td>
-</tr>
-<tr>
+  <td><input type="text" name="date" placeholder="yyyy-mm-dd"  value="'.$row["date"].'" required></td></tr>';
+  echo '<tr>
   <td><label>Activity Description :</label></td>
-  <td><textarea name="logdesc" row="200" cols="80" required></textarea></td>
-</tr>
-<tr>
+  <td><input type="text" name="logdesc"  value="'.$row["logdesc"].'" required size="100"></textarea></td>
+</tr>';/*
+'<tr>
   <td><lable>Upload :</label></td>
-  <td><input type="file" name="file"/></td>
-</tr>
+  <td><input type="file" name="file"/ value="'.$row["file"].'"></td>
+</tr>';*/
+              
+
+
+            }
+
+
+
+         }
+
+         else{
+            echo "No Result";
+        }
+        
+        $conn->close();
+
+
+
+        ?>
 <br>
 <tr>
   <td></td>
@@ -97,7 +107,34 @@ session_start();?>
 
     
  </table><br><br><br><br>
- <input type="submit" value="Submit" name="insertlogbook" />&nbsp;&nbsp;    
+ <br><button type="update" name="update" onClick="myFunction()">Update</button>
+ 
+ <?php
+$conn = mysqli_connect("localhost", "root", "", "studfyp");
+if (!$conn) {
+   die('Could not connect: ' . mysqli_connect_error());
+}
+
+if(isset($_POST["update"]))
+
+{
+    
+    mysqli_query($conn,"update logbook set fyptitle='$_POST[fyptitle]',week='$_POST[week]', date='$_POST[date]', logdesc='$_POST[logdesc]' WHERE logbookid='" . $_GET['id'] . "'") or die(mysqli_error($conn));
+
+    ?>
+   <script>
+    location="logbookfyp1page2.php";</script>
+
+<?php
+    
+    
+}
+?>
+<script>
+function myFunction() {
+  alert("Your information Successfully updated!");
+}
+</script>
 
  
     </form>

@@ -56,11 +56,11 @@ width: 20%;
 <div class="row">
     <div class="column left">
     <ul>
-    <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
-        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
-       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
-        <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
-       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
+    <li> <a href="studenthomefyp2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp2page2.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="studentsvinfofyp2.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="studentfyp2status.php" class="button" name="status">Status</a></li>
+       <li><a href="studentfyp2profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
@@ -78,7 +78,7 @@ width: 20%;
               
                 
                   
-                   $sql = "SELECT totalsup from evaluation where studid='".$_SESSION['User']."'";
+                   $sql = "SELECT totalsup from evaluation2 where studid='".$_SESSION['User']."'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -146,11 +146,7 @@ width: 20%;
 
                        }
                        
-                       ?>
-                        
-                        <br><tr><td><button type="submit" name="enrol2" onClick="myFunction()">Enrol FYP2</button></td></tr>
                        
-                       <?php
                     }
 
 
@@ -175,28 +171,6 @@ width: 20%;
 
  </table>
 
-<?php
-$conn = mysqli_connect("localhost", "root", "", "studfyp");
-if (!$conn) {
-   die('Could not connect: ' . mysqli_connect_error());
-}
-
-if(isset($_POST["enrol2"]))
-
-{
-    
-    mysqli_query($conn,"insert into studentfyp2 (fypid,matricid,studentname,studentemail,pcode,phone,semester) select fypid,matricid,studentname,studentemail,pcode,phone,semester from studentfyp1 where matricid='".$_SESSION['User']."'");
-
-    header('location:studenthomefyp2.php');
-    
-    
-}
-?>
-<script>
-function myFunction() {
-  alert("Your Enrol FYP 2 Successfully");
-}
-</script>
 
 
 

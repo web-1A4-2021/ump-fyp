@@ -40,11 +40,11 @@ session_start();?>
 <div class="row">
     <div class="column left">
     <ul>
-    <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
-        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
-       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
-        <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
-       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
+    <li> <a href="studenthomefyp2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp2page2.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="studentsvinfofyp2.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="studentfyp2status.php" class="button" name="status">Status</a></li>
+       <li><a href="studentfyp2profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
@@ -63,7 +63,6 @@ session_start();?>
 <table class="center">
 
     <tr>
-        
         <th>Week</th>
         <th>Date</th>
         <th>Description</th>
@@ -77,7 +76,7 @@ session_start();?>
 
      
            $matricid=$_SESSION['User'];
-           $sql = "select * from logbook where matricid='".$_SESSION['User']."'"; 
+           $sql = "select * from logbook2 where matricid='".$_SESSION['User']."'"; 
            $result = $conn -> query($sql);
 
            if ($result !== false && $result->num_rows > 0) {
@@ -87,14 +86,14 @@ session_start();?>
               
           
           
-                 <tr>
+              <tr>
                    
-                  <td><?php echo $row['week'] ?></td>
-                  <td><?php echo $row['date'] ?></td>
-                  <td><?php echo $row['logdesc'] ?></td>
-                  <td><?php echo $row['file'] ?></td>
-                  <td><?php echo $row['logbookfeedback'] ?></td>
-                  <td><a href="logbookfyp1update.php?id=<?php echo $row['logbookid'] ?>">Update</a></td></tr>
+                   <td><?php echo $row['week'] ?></td>
+                   <td><?php echo $row['date'] ?></td>
+                   <td><?php echo $row['logdesc'] ?></td>
+                   <td><?php echo $row['file'] ?></td>
+                   <td><?php echo $row['logbookfeedback'] ?></td>
+                   <td><a href="logbookfyp2update.php?id=<?php echo $row['logbookid'] ?>">Update</a></td></tr>
            
           <?php
             }
@@ -111,7 +110,7 @@ session_start();?>
 </table>
 <br><br>
 </form>
-<a href="logbookfyp1.php"><input type="submit" value="Add your activities" /></a>
+<a href="logbookfyp2.php"><input type="submit" value="Add your activities" /></a>
     </div>
 
 

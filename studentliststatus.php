@@ -69,7 +69,7 @@ session_start();
 
                         <tr>
                             <?php
-                            $conn = mysqli_connect("localhost", "root", "", "studFYP");
+                            $conn = mysqli_connect("localhost", "root", "", "studfyp");
                             if (!$conn) 
                             {
                             die('Could not connect: ' . mysqli_connect_error());
