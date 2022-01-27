@@ -7,7 +7,7 @@ echo "
         <h3>New User</h3><br>
         <label for='matricid'>Matric ID</label><br>
         <input type='text' id='matricid' name='matricid' placeholder='Matric ID'><br>
-        <label for='userrole'>User Type</label>
+        <label for='userrole'>User Role</label>
         <select name='userrole' id='userrole'>
             <option value='adm'>Admin</option>
             <option value='coo'>Coordinator</option>
