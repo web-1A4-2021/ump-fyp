@@ -47,9 +47,10 @@ if (isset($_GET["studID"]))
 <div class="row">
     <div class="column left">
         <ul>
-       <li> <a href="suphome.php" class="button" name="home">Home</a></li>
+        <li> <a href="suphome.php" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
+       <li><a href="supevaluation.php" class="button" name="evaluation">Evaluation</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
        <li><a href="supreport.php" class="button"  name="report">Report</a></li>
     </div>
@@ -63,11 +64,7 @@ if (isset($_GET["studID"]))
             
             <tr>
                <?php
-                $conn = mysqli_connect("localhost", "root", "", "studFYP");
-                if (!$conn) {
-                   die('Could not connect: ' . mysqli_connect_error());
-             }
-                
+               
                   //$user = $_SESSION['id'];
                    $sql = "SELECT * FROM student WHERE studentid = '$studentid'";
                    $result = $conn -> query($sql);

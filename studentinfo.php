@@ -52,9 +52,10 @@ include_once './include/config.php';
 <div class="row">
     <div class="column left">
     <ul>
-       <li> <a href="suphome.php" class="button" name="home">Home</a></li>
+    <li> <a href="suphome.php" class="button" name="home">Home</a></li>
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
+       <li><a href="supevaluation.php" class="button" name="evaluation">Evaluation</a></li>
         <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
        <li><a href="supreport.php" class="button"  name="report">Report</a></li>
     </div>
@@ -76,7 +77,7 @@ include_once './include/config.php';
                <?php
                 
                 
-                   $sql = "SELECT studentid, matricid,studentname,fypstatus,svid FROM student WHERE svid='".$_SESSION['matricid']."'";
+                   $sql = "SELECT student.studentid, student.matricid,student.studentname,student.fypstatus,studentsupervisor.Fypstd_ID,studentsupervisor.Sup_ID FROM student,studentsupervisor WHERE student.studentid = studentsupervisor.Fypstd_ID AND  studentsupervisor.Sup_ID='".$_SESSION['matricid']."'";
                    $result = $conn -> query($sql);
 
                    if($result->num_rows > 0){
