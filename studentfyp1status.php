@@ -1,6 +1,9 @@
-<?php 
+<?php
+session_start();
 include_once './include/config.php';
-session_start();?>
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,13 +16,26 @@ session_start();?>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
         <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-        <title>Status</title>
+        <link rel="stylesheet" href="css/alert.css">
+        <script>  src="https://code.jquery.com/jquery-3.6.0.js"</script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <title>Student Profile</title>
         <style>
-       table.center{
-           text-align: center;
-           padding-left:100px;
-       }
+   input{
+          width:50%;
+          height: 50px;
+          margin-top:30px;
+          padding-left: 20px;
+      }
+
+      #right{
+
+padding-left: 100px;
+width: 20%;
+}
+.left ul li .button{
+      height:20%;
+  }
 
 
         </style>
@@ -28,12 +44,12 @@ session_start();?>
     <div class="header">
         <div class ="inner_header">
             <div class="logo_container">
-            <img src="umplogo.png" alt="imgheader">  
-            </div><div class="textheader"><h1>Student FYP Management System</h1><div><nav>
-                <li><span><a href="logout.php"><button>Logout</button></a></span></li>
-      </nav>
-</div></div>
-            
+            <h1><img src="umplogo.png" alt="imgheader">  Student FYP Management System </h1>
+            </div>
+        <nav>
+          <li style="list-style-type:none;"><span ><a href="logout.php" style="color:#fff; " >Logout</a></span></li>
+</nav>
+
         </div>
 </div>
 
@@ -48,64 +64,138 @@ session_start();?>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
-        <br>
+    
 
 
-    <div align="center"><h3>Student Status</h3><br><br>
-     <table><tr><td><p>FYP 1 Result :&nbsp;<input type="text" name="result1" readonly></p><br><br>
-        <p>FYP 2 Result :&nbsp;<input type="text" name="result2" readonly value="not available"></p><br><br>
-        <p>Enrol FYP 2 Here :</p><br>
-        <p><a href="logout.php"><button>Enrol Me</button></a></p><br><br><br><br><br>
-        <p>Final Rate for your Final Year Projet:
-        </p>
-</td></tr><tr><td>
+    <br><h3>Result</h3>
+    <form action="" name="studentfyp1" method="post" enctype = "multipart/form-data">
 
-<table>
-<tr>
-    <th>Mark</th>
-    <th>Gred</th>
-</tr>
+        <table class="tb">
+
+            
+            <tr>
+               <?php 
+              
+                
+                  
+                   $sql = "SELECT totalsup from evaluation where studid='".$_SESSION['User']."'";
+                   $result = $conn -> query($sql);
+
+            if($result->num_rows > 0)
+                {
+                    while($row = $result -> fetch_assoc() )
+                    {
+                       
+                      if ($row["totalsup"]>=40){
+                       if($row["totalsup"]>=40 && $row["totalsup"]<=49){
+                         
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="PASS" </td></tr>';
+                         
+
+                       }
+
+                       else if($row["totalsup"]>=50 && $row["totalsup"]<=59){
+                         
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="C" </td></tr>';
+                         
+
+                       }
+
+                       else if($row["totalsup"]>=60 && $row["totalsup"]<=69){
+                         
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="B" </td></tr>';
+                         
+
+                       }
+
+                       else if($row["totalsup"]>=70 && $row["totalsup"]<=79){
+                         
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="A-" </td></tr>';
+                         
+
+                       }
+
+                       else if($row["totalsup"]>=80 && $row["totalsup"]<=89){
+                         
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="A" </td></tr>';
+                         
+
+                       }
+
+                       else{
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="A+" </td></tr>';
+                         
+
+                       }
+                      
+                    }
 
 
-</table>
+                       else{
+
+                        echo "Repeat";
+                       }
+                    }
+                }
+                 
+             
+             else{
+                 echo "No Result";
+             }
+             
+
+
+             $conn->close();
+            
+
+             
+             ?>
+
+ 
+
+                       <tr><td id="right">
+                       <form action="studentenrol1.php" method="post"><br><br>
+                       <p><button type="submit" name="enrol2">Enrol FYP2</button></a></p>
+                       </form></td></tr>
+                       
+ </table>
+
+ 
 
 
 
 
-</td></tr>
-
-
-
-</table>
-        
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
+</form>
 
 
 
 
 </div>
 
- 
-
 
 <footer id="footer">     
                         <span> Copyright &copy; 2021 All Right Reserved</span>
             </footer>
 
-
     </body>
+
+    
 </html>

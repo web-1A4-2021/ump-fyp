@@ -44,7 +44,7 @@ session_start();?>
         <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
        <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
-       <li><a href="profile.php" class="button"  name="profile">Profile</a></li>
+       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
@@ -62,38 +62,38 @@ if ($conn->connect_error) {
 
 $matricid=$_SESSION['User'];
  
-$sql = "SELECT supervisor.sup_id,supervisor.supname,supervisor.supemail,supervisor.supphone,supervisor.suproom,student.fypid FROM studentfyp1supervisor where studentfyp1.fypid=supervisor.sup_id";
+$sql = "SELECT sup_id,supname,supemail,supphone,suproom FROM supervisor";
 $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
-?><table border="1" align="center">
+?><table align="center">
 
 <tr>
-    <td>ID</td>
+    <td>Supervisor ID :</td>
     <td><?php echo $row["sup_id"];?></td>
     
   </tr>
 
 
 <tr>
-    <td>Name</td>
+    <td>Name :</td>
     <td><?php echo $row["supname"];?></td>
     
   </tr>
   <tr>
-    <td>Age</td>
+    <td>Email :</td>
     <td><?php echo $row["supemail"];?></td>
     
   </tr>
   <tr>
-    <td>Gender</td>
+    <td>Phone :</td>
     <td><?php echo $row["supphone"];?></td>
     
   </tr>
     <tr>
-    <td>Title</td>
+    <td>Room :</td>
     <td><?php echo $row["suproom"];?></td>
     
   </tr>

@@ -55,6 +55,8 @@ if($check>0)
         
         $_SESSION['User'] = $matricid;
 		$_SESSION['userrole'] = "std";
+
+        
         header("location:../studenthome.php");//* student page
     }
     else{
