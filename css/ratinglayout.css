@@ -8,6 +8,8 @@ background-color: #e3f8f5;
     background-color: #e3f8f5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    padding: 8px 10px;
+    margin-top: -16px;
 }
 
 #footer {
@@ -60,8 +62,6 @@ background-color: #e3f8f5;
     cursor: pointer;
 }
 .avgbutton:hover {opacity: 1.3}
-
-
 
 
 
