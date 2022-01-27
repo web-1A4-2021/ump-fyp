@@ -62,7 +62,7 @@ if ($conn->connect_error) {
 
 $matricid=$_SESSION['User'];
  
-$sql = "SELECT supname,supemail,supphone,suproom FROM supervisor";
+$sql = "SELECT supervisor.sup_id,supervisor.supname,supervisor.supemail,supervisor.supphone,supervisor.suproom,student.fypid FROM studentfyp1supervisor where studentfyp1.fypid=supervisor.sup_id";
 $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
@@ -70,7 +70,14 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?><table border="1" align="center">
 
-  <tr>
+<tr>
+    <td>ID</td>
+    <td><?php echo $row["sup_id"];?></td>
+    
+  </tr>
+
+
+<tr>
     <td>Name</td>
     <td><?php echo $row["supname"];?></td>
     
