@@ -56,11 +56,11 @@ width: 20%;
 <div class="row">
     <div class="column left">
     <ul>
-    <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
-        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
-       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
-        <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
-       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
+    <li> <a href="studenthomefyp2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp2page2.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="studentsvinfofyp2.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="studentfyp2status.php" class="button" name="status">Status</a></li>
+       <li><a href="studentfyp2profile.php" class="button"  name="profile">Profile</a></li>
        <li><a href="#" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">

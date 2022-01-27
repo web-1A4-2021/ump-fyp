@@ -33,7 +33,7 @@ else
   ?>
                 
     <script>window.alert("Have Error");
-    location="logbook.php";</script>
+    location="logbookfyp1page2.php";</script>
     
     <?php
 }
@@ -50,7 +50,7 @@ else if(isset($_POST['insertlogbook2']))
 
     
 
- $ret=mysqli_query($conn,"insert into logbook(fyptitle,week,date,logdesc,file,matricid) values('$fyptitle','$week','$date','$logdesc','$file','$matricid')");
+ $ret=mysqli_query($conn,"insert into logbook2(fyptitle,week,date,logdesc,file,matricid) values('$fyptitle','$week','$date','$logdesc','$file','$matricid')");
 if($ret)
 {
    // $ret2=mysqli_query($conn,"insert into logbook(fypid) select fypid from studentfyp1 where matricid='".$_SESSION['User']."'");
@@ -70,7 +70,7 @@ else
 ?>
             
 <script>window.alert("Have Error");
-location="logbook.php";</script>
+location="logbookfyp1page2.php";</script>
 
 <?php
 }

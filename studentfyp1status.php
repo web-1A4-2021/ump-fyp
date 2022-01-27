@@ -187,7 +187,7 @@ if(isset($_POST["enrol2"]))
     
     mysqli_query($conn,"insert into studentfyp2 (fypid,matricid,studentname,studentemail,pcode,phone,semester) select fypid,matricid,studentname,studentemail,pcode,phone,semester from studentfyp1 where matricid='".$_SESSION['User']."'");
 
-    header('location:studenthome2.php');
+    header('location:studenthomefyp2.php');
     
     
 }
