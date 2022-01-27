@@ -2,7 +2,7 @@
 session_start();
 include_once './include/config.php';
 
-$sql = "SELECT fypstatus, count(*) as number FROM student GROUP BY fypstatus ORDER BY svid='".$_SESSION['matricid']."' " ;
+$sql = "SELECT student.fypstatus, count(*) as number FROM student,studentsupervisor GROUP BY student.fypstatus ORDER BY studentsupervisor.Fypstd_ID=student.studentid AND studentsupervisor.Sup_ID='".$_SESSION['matricid']."' " ;
 $result = mysqli_query($conn, $sql);
 
 

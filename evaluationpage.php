@@ -1,5 +1,8 @@
 <?php
-require_once('connect.php');
+//? this is Darwish editting
+require_once("./include/config.php");
+//require_once('connect.php');
+//? End
 session_start();
 ?>
 <!DOCTYPE html>

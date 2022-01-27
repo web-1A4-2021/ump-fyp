@@ -11,6 +11,8 @@ include_once '../include/config.php';
     <link href="../css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="../css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <title>Administrator</title>
+    <link rel="shortcut icon" href="#">
+
 </head>
 <body>
 <div class="header">
