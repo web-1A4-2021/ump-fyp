@@ -24,8 +24,18 @@ if($view == 0)
             <td>".uRole($row)."</td>
             <td>".uType($row)."</td>
             <td>".$row['matricid']."</td>
-            <td><a class='edit' href=''>Edit</a></td>
-            <td><a class='del'href=''>Delete</a></td>
+            <td>
+                <form action='../function/edituser.php' method='post' class='edit'>
+                    <input type='text' value='".$row['userid']."' name='userid' style='display:none;'>
+                    <input type='submit' value='Edit' name='edit'>
+                </form>
+            </td>
+            <td>
+                <form action='../function/deleteuser.php' method='post' class='delete'>
+                    <input type='text' value='".$row['userid']."' name='userid' style='display:none;'>
+                    <input type='submit' value='Delete' name='delete'>
+                </form>
+            </td>
             </tr>";
     }
     echo "</table>";
@@ -89,10 +99,5 @@ function uType($row)
             return 'External User';
             break;
     }
-}
-//! under development
-function del($uid)
-{
-    echo "<script>alert('$uid');</script>";
 }
 ?>

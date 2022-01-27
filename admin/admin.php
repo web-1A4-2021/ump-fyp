@@ -47,6 +47,7 @@ include_once '../include/config.php';
     {
         include './report.php';//* View report
     }
+
     ?>
     <form>
         <table class="tb">
@@ -76,9 +77,15 @@ include_once '../include/config.php';
     }
     .edit{
         color:#00AC9F;
+        border: none;
+        margin:0px;
+        height:auto;
     }
-    .del{
+    .delete{
         color:#DF0024;
+        border: none;
+        margin:0px;
+        height:auto;
     }
 </style>    
 </body>
