@@ -106,4 +106,4 @@ echo "
     </script>
     ";
 
-//echo "<script>alert('$lecTypeP');</script>";
+//* test echo "<script>alert('$lecRoleP');</script>";

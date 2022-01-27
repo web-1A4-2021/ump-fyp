@@ -13,6 +13,7 @@ if($view == 0)
         <th>User ID</th>
         <th>User Role</th>
         <th>User Type</th>
+        <th>Matric ID</th>
         <th></th>
         <th></th>
         </tr>";
@@ -22,9 +23,9 @@ if($view == 0)
             <td>".uId($row).$row['userid']."</td>
             <td>".uRole($row)."</td>
             <td>".uType($row)."</td>
-            <td><a class='edit' href='./admin..php?'>Edit</a></td>
-            <td><a class='del'
-                href=delete()>Delete</a></td>
+            <td>".$row['matricid']."</td>
+            <td><a class='edit' href=''>Edit</a></td>
+            <td><a class='del'href=''>Delete</a></td>
             </tr>";
     }
     echo "</table>";
@@ -90,4 +91,8 @@ function uType($row)
     }
 }
 //! under development
+function del($uid)
+{
+    echo "<script>alert('$uid');</script>";
+}
 ?>
