@@ -102,9 +102,7 @@ width: 20%;
              else{
                  echo "No Result";
              }
-             
-             $conn->close();
-            
+           
 
              
              ?>
@@ -123,7 +121,7 @@ if(isset($_POST["update"]))
 
 {
     
-    mysqli_query($conn,"update supervisor set sup_id= '$_POST[supid]',supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]'  where sup_id ='".$_SESSION['matricid']."'") or die(mysqli_error($conn));
+    mysqli_query($conn,"update supervisor set supname='$_POST[name]', supemail='$_POST[email]', supphone='$_POST[phone]',suproom='$_POST[suproom]'  WHERE sup_id ='".$_SESSION['matricid']."'") or die(mysqli_error($conn));
 
     header('location:supprofile.php');
     
