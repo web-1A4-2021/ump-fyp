@@ -60,7 +60,7 @@ if($ret)
 ?>
             
 <script>window.alert("Insert Successfully");
-location="logbookfyp1page2.php";</script>
+location="logbookfyp2page2.php";</script>
 
 <?php
 }
