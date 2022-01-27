@@ -18,14 +18,17 @@
       <meta name="msapplication-tap-highlight" content="no">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
       <link href="css/ratinglayout.css" type="text/css" rel="stylesheet" media="screen,projection">
-
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+      
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
 
+ 
    
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
    
+
    
       function drawChart() {
 
@@ -57,7 +60,8 @@
     </script>
   </head>
 
-  
+  <body>
+
       <div class="header" >
         <div class ="inner_header">
             <div class="logo_container">
@@ -70,16 +74,15 @@
         </div>
       </div>
 
-
-  
     
-    <div id="piechart" style="width: 700px; height: 450px; margin:0 auto; "></div>
+    <div id="piechart" style="width: 900px; height: 464px; margin:auto;"></div>
   
     
     <div class= "ratebutton">
-        <button class="backbutton" style="margin-left:170px" onclick="history.back()">◁ Back</button>
+        <button class="backbutton" style="margin-left:144px" onclick="history.back()">◁ Back</button>
     </div>
 
+    
 
 
     <footer id="footer">     
@@ -87,8 +90,7 @@
     </footer>
 
     
-
-  
+    </body>
 
 </html>
 
