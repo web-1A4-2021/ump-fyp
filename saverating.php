@@ -11,3 +11,5 @@ mysqli_query($conn, "INSERT INTO rating (studentid, rating) VALUES ('$studentid'
 echo "Saved";
 
 ?>
+
+
