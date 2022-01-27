@@ -61,7 +61,7 @@ session_start();?>
         <tr>
   <td><label>Week :</label></td>
   <td><select name="week" required>
-                 <option value="You need to update. Go to View.">Select Week</option>
+                 <option value="You need to update. Go to Update.">Select Week</option>
                  <option value="1">Week 1</option>
                  <option value="2">Week 2</option>
                  <option value="3">Week 3</option>
