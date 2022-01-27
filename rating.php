@@ -35,7 +35,7 @@
 
           td {
             padding: 7.5px;
-            width: 20%;
+            width: 50%;
             text-align: center;
           }
 
