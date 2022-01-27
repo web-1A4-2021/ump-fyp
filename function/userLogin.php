@@ -24,7 +24,7 @@ if($check>0)
     {
         $_SESSION['matricid'] = $matricid;
 		$_SESSION['userrole'] = "coo";
-        header("location:../");//* coordinator page
+        header("location:../search_student.php");//* coordinator page
     }
     else if($data['userrole']=='sup'){
         $_SESSION['matricid'] = $matricid;
