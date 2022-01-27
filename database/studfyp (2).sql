@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 06:14 PM
+-- Generation Time: Jan 27, 2022 at 07:18 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -99,8 +99,8 @@ CREATE TABLE `logbook` (
 --
 
 INSERT INTO `logbook` (`logbookid`, `fyptitle`, `week`, `date`, `logdesc`, `file`, `logbookfeedback`, `studentid`) VALUES
-(1, 'FYP SYSTEM', 1, '2022-01-20', 'discuss with lecturer about the use case diagram', '0', '', 1),
-(2, 'UMP Taska System', 1, '2022-01-21', 'update report', '0', '', 2);
+(1, 'FYP SYSTEM', 1, '2022-01-20', 'discuss with lecturer about the use case diagram', '0', '', 3),
+(2, 'UMP Taska System', 1, '2022-01-21', 'update report', '0', '', 4);
 
 -- --------------------------------------------------------
 
@@ -279,7 +279,8 @@ INSERT INTO `userinfo` (`userid`, `matricid`, `password`, `userrole`, `usertype`
 (23, 'LS10021', 'super', 'sup', 'lec'),
 (24, 'LS10011', 'super', 'sup', 'lec'),
 (25, 'LS12122', 'super', 'sup', 'lec'),
-(26, 'LS12221', 'super', 'sup', 'lec');
+(26, 'LS12221', 'super', 'sup', 'lec'),
+(27, 'CO10001', 'coordinator', 'coo', 'lec');
 
 --
 -- Indexes for dumped tables
@@ -383,7 +384,7 @@ ALTER TABLE `supervisor`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
