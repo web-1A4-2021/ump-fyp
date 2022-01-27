@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 07:59 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Jan 27, 2022 at 06:14 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,6 +40,27 @@ CREATE TABLE `announcement` (
 
 INSERT INTO `announcement` (`AnnouncementID`, `Title`, `Date`, `Content`) VALUES
 (5, 'Welcome message', '2022-01-26', 'Welcome to the new academic year, hopefully we shall start our new semester with refreshing hopes and positive mindset. The lecture will be conducted ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `evaluation`
+--
+
+CREATE TABLE `evaluation` (
+  `studID` varchar(10) NOT NULL,
+  `sup_eva1` varchar(30) NOT NULL,
+  `sup_eva2` varchar(30) NOT NULL,
+  `evaluator` int(50) NOT NULL,
+  `Totalsup` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `evaluation`
+--
+
+INSERT INTO `evaluation` (`studID`, `sup_eva1`, `sup_eva2`, `evaluator`, `Totalsup`) VALUES
+('CA18122', '6', '12', 0, '18');
 
 -- --------------------------------------------------------
 
@@ -172,16 +193,20 @@ INSERT INTO `studentlist` (`id`, `name`, `average_rating`) VALUES
 --
 
 CREATE TABLE `studentsupervisor` (
-  `studentid` int(10) NOT NULL,
-  `sup_id` varchar(30) NOT NULL
+  `Fypstd_ID` int(11) NOT NULL,
+  `Sup_ID` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `studentsupervisor`
 --
 
-INSERT INTO `studentsupervisor` (`studentid`, `sup_id`) VALUES
-(1, 'LS10001');
+INSERT INTO `studentsupervisor` (`Fypstd_ID`, `Sup_ID`) VALUES
+(1, '30010'),
+(2, 'KA1112'),
+(3, 'LS10001'),
+(4, 'LS10001'),
+(5, 'KA1112');
 
 -- --------------------------------------------------------
 
@@ -204,9 +229,15 @@ CREATE TABLE `supervisor` (
 
 INSERT INTO `supervisor` (`supid`, `sup_id`, `supname`, `supemail`, `supphone`, `suproom`) VALUES
 (1, 'LS10001', 'Danial Bin Isa', 'danial@gmail.com', '010-7676762', 'Faculty of computing, Floor 4, Room B-24'),
-(2, 'KA1112', 'Amirul Sufi Bin Saifuddin', 'amirulsufi@gmail.com', '010-544122', 'Faculty of computing, Floor 2, Room A-13'),
-(3, 'LA1113', 'Ali Bin Baba', '', '', ''),
-(4, 'LS10004', 'Mat Abu Bin Ayub', '', '', '');
+(2, 'LS10002', 'ABBAS SALIIMI BIN LOKMAN', 'abbas@ump.edu.my', '094244621', ''),
+(3, 'LS10003', 'ABDUL SAHLI BIN FAKHARUDIN', 'sahli@ump.edu.my', '094244623', ''),
+(5, 'LS10004', 'ADZHAR BIN KAMALUDIN', 'adzhar@ump.edu.my', '094245021', ''),
+(6, 'LS10009', 'AMINATUL NOR BINTI MOHAMED SAID', 'aminatul@ump.edu.my', '092422632', ''),
+(7, 'LS19001', 'ANIS FARIHANI BINTI MAT RAFFEI', 'anisfarahi@ump.edu.my', '095453222', ''),
+(8, 'LS10021', 'ARIFIN BIN SALEH', 'arifin@ump.edu.my', '095492141', ''),
+(9, 'LS10011', 'AZAMUDDIN BIN AD RAHMAN', 'azamuddinrahman@ump.edu.my', '', ''),
+(10, 'LS12122', 'AZLEE BIN ZABIDI', 'azlee@ump.edu.my', '09559223', ''),
+(11, 'LS12221', 'AZLINA BINTI ZAINUDDIN', 'azlinaz@ump.edu.my', '095492352', '');
 
 -- --------------------------------------------------------
 
@@ -240,9 +271,15 @@ INSERT INTO `userinfo` (`userid`, `matricid`, `password`, `userrole`, `usertype`
 (11, 'EV10001', 'evaluator', 'eva', 'lec'),
 (12, 'CB10121', 'student', 'std', 'std'),
 (13, 'CD20003', 'abc123', 'std', 'std'),
-(14, 'KA1112', 'super1', 'sup', 'lec'),
-(15, 'LA1113', 'super', 'sup', 'lec'),
-(16, 'LS10004', 'super', 'sup', 'lec');
+(18, 'LS10002', 'super', 'sup', 'lec'),
+(19, 'LS10003', 'super', 'sup', 'lec'),
+(20, 'LS10004', 'super', 'sup', 'lec'),
+(21, 'LS10009', 'super', 'sup', 'lec'),
+(22, 'LS19001', 'super', 'sup', 'lec'),
+(23, 'LS10021', 'super', 'sup', 'lec'),
+(24, 'LS10011', 'super', 'sup', 'lec'),
+(25, 'LS12122', 'super', 'sup', 'lec'),
+(26, 'LS12221', 'super', 'sup', 'lec');
 
 --
 -- Indexes for dumped tables
@@ -253,6 +290,12 @@ INSERT INTO `userinfo` (`userid`, `matricid`, `password`, `userrole`, `usertype`
 --
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`AnnouncementID`);
+
+--
+-- Indexes for table `evaluation`
+--
+ALTER TABLE `evaluation`
+  ADD PRIMARY KEY (`studID`);
 
 --
 -- Indexes for table `fypstudent`
@@ -334,13 +377,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `supervisor`
 --
 ALTER TABLE `supervisor`
-  MODIFY `supid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `supid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
