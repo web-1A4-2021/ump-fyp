@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="#">
 <?php
 //* Connect to database
 include_once '../include/config.php';

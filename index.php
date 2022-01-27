@@ -7,6 +7,7 @@
     <link href="css/layout.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="css/sidebar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <title>Login</title>
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
 <form action="./function/userLogin.php" method="post">
