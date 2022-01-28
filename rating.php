@@ -78,7 +78,7 @@ include_once './include/config.php';
 
 <?php
     // Connecting with database
-       //$conn = mysqli_connect("localhost", "root", "", "studFYP");
+       //$conn = mysqli_connect("localhost", "root", "", "heroku_ea38f35ca4afbb9");
  
     // Getting all students
        $result = mysqli_query($conn, "SELECT * FROM studentlist");
