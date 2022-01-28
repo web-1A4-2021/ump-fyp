@@ -33,8 +33,8 @@ if($check>0)
     else if($data['userrole']=='sup'){
         $_SESSION['matricid'] = $matricid;
 		$_SESSION['userrole'] = "sup";
-        //header("location: ../suphome.php");//*supervisor page
-        echo "<script>window.location.href='../suphome.php';</script>";  
+        header("location: ../suphome.php");//*supervisor page
+        //echo "<script>window.location.href='../suphome.php';</script>";  
     }
     else if($data['userrole']=='eva'){
         $_SESSION['matricid'] = $matricid;
