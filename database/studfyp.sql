@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 07:18 PM
+-- Generation Time: Jan 28, 2022 at 07:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -119,16 +119,15 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`studentid`, `rating`, `id`) VALUES
-(1, 4, 195),
-(3, 3, 196),
-(2, 2, 197),
-(4, 3, 198),
-(5, 4, 199),
-(6, 3, 200),
-(7, 2, 201),
-(8, 3, 202),
-(9, 3, 203),
-(1, 3, 204);
+(1, 3, 220),
+(2, 3, 221),
+(3, 3, 222),
+(4, 5, 223),
+(1, 5, 224),
+(9, 5, 225),
+(9, 1, 226),
+(5, 2, 227),
+(8, 2, 228);
 
 -- --------------------------------------------------------
 
@@ -175,16 +174,16 @@ CREATE TABLE `studentlist` (
 --
 
 INSERT INTO `studentlist` (`id`, `name`, `average_rating`) VALUES
-(1, 'Raj', 4),
-(2, 'Tinesh', 2),
-(3, 'Sathes', 3),
-(4, 'Prem', 3),
-(5, 'Ram', 4),
-(6, 'Mahen', 3),
-(7, 'Nitesh', 2),
-(8, 'Dinesh', 3),
-(9, 'Kashvin', 3),
-(10, 'Ramthanaraj', 0);
+(1, 'MOHAMAD AMIRUL', 4),
+(2, 'MOHAMMAD ABU', 3),
+(3, 'SUUGEN RAJ', 3),
+(4, 'SITI NUR AIN', 5),
+(5, 'NUR HAZIQAH', 2),
+(6, 'KASHVIN JEVA', 0),
+(7, 'DARWISH MAT ZAIN', 0),
+(8, 'MUHAMMAD AMRI', 2),
+(9, 'KAVITHAA', 3),
+(10, 'MUHAMAD AMAL', 0);
 
 -- --------------------------------------------------------
 
@@ -228,7 +227,7 @@ CREATE TABLE `supervisor` (
 --
 
 INSERT INTO `supervisor` (`supid`, `sup_id`, `supname`, `supemail`, `supphone`, `suproom`) VALUES
-(1, 'LS10001', 'Danial Bin Isa', 'danial@gmail.com', '010-7676762', 'Faculty of computing, Floor 4, Room B-24'),
+(1, 'LS10001', 'Danial Bin Isa', 'danial@gmail.com', '010-7676764', 'Faculty of computing, Floor 4, Room B-24'),
 (2, 'LS10002', 'ABBAS SALIIMI BIN LOKMAN', 'abbas@ump.edu.my', '094244621', ''),
 (3, 'LS10003', 'ABDUL SAHLI BIN FAKHARUDIN', 'sahli@ump.edu.my', '094244623', ''),
 (5, 'LS10004', 'ADZHAR BIN KAMALUDIN', 'adzhar@ump.edu.my', '094245021', ''),
@@ -366,7 +365,7 @@ ALTER TABLE `logbook`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
 -- AUTO_INCREMENT for table `student`
