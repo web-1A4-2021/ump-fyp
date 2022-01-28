@@ -101,7 +101,7 @@ input[type=submit]:hover {
     <div class="column left">
     <ul>
        <li> <a href="#" class="button" name="home">Home</a></li>
-        <li><a href="Calendarview.php" class="button"  name="calview">Calendarview</a></li>
+        <li><a href="calendarview.php" class="button"  name="calview">Calendarview</a></li>
        <li><a href="studentsupervisor.php" class="button" name="studentsupervisor">studentsupervisor</a></li>
        <li><a href="Announcement.php" class="button" name="announ">Announcement</a></li>
        <li><a href="Viewprogress.php" class="button" name="Viewprog">Viewprogress</a></li>
