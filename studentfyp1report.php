@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
     <head>
         
-    <title>Supervisor Profile</title>
+    <title>Notice</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-sacale=1.0, user-scalable=no">
@@ -84,18 +84,18 @@ width: 20%;
 <div class="row">
     <div class="column left">
     <ul>
-    <li> <a href="suphome.php" class="button" name="home">Home</a></li>
-        <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
-       <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
-       <li><a href="supevaluation.php" class="button" name="evaluation">Evaluation</a></li>
-        <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
-       <li><a href="supreport.php" class="button"  name="report">Report</a></li>
+    <li> <a href="studenthome2.php" class="button" name="home">Home</a></li>
+        <li><a href="logbookfyp1page2.php" class="button"  name="studinfo">Logbook</a></li>
+       <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
+        <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
+       <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
+       <li><a href="studentfyp1report.php" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
     
 
 
-    <br><h3>Percentage of FYP1 and FYP 2 students </h3>
+    <br><h3>Notice</h3>
     <div id="piechart" style="width: 900px; height 500px;"></div>
 
    
