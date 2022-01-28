@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once './include/config.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +79,7 @@
 
 <?php
     // Connecting with database
-       //$conn = mysqli_connect("localhost", "root", "", "heroku_ea38f35ca4afbb9");
+       //$conn = mysqli_connect("localhost", "root", "", "studfyp");
  
     // Getting all students
        $result = mysqli_query($conn, "SELECT * FROM studentlist");
