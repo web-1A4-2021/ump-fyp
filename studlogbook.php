@@ -58,7 +58,7 @@ if (isset($_GET["logID"]))
         <li><a href="studentinfo.php" class="button"  name="studinfo">Student Info</a></li>
        <li><a href="supprofile.php" class="button" name="profile">Profile</a></li>
        <li><a href="supevaluation.php" class="button" name="evaluation">Evaluation</a></li>
-        <li><a href="suprating.php" class="button" name="rate">Rate</a></li>
+        <li><a href="rating.php" class="button" name="rate">Rate</a></li>
        <li><a href="supreport.php" class="button"  name="report">Report</a></li>
     </div>
     <div class="column right">
