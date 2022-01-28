@@ -1,10 +1,8 @@
 <?php
-  $con = mysqli_connect("localhost","root","","studFYP");
-  if($con){
-    //echo "connected";
-  }
-?>
+session_start();
+include_once './include/config.php';
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
