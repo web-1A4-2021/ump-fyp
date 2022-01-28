@@ -1,4 +1,4 @@
-<link rel="shortcut icon">
+
 <?php
 //* connect to databse
 include_once "../include/config.php";
