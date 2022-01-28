@@ -86,8 +86,8 @@ include_once './include/config.php';
                        echo '<tr><td>' .$row["matricid"]. '</td>';
                         echo '<td>' .$row["studentname"]. '</td>';
                       echo '<td>' .$row["fypstatus"]. '</td>';
-                       echo '<td><a href="studprofile.php?studID='.$row["studentid"].'">View</a<td>';
-                       echo '<td><a href="studprog.php?studID='.$row["studentid"].'">View</a></td></tr>';
+                       echo '<td><a href="studprofile.php?studID='.$row["matricid"].'">View</a<td>';
+                       echo '<td><a href="studprog.php?studID='.$row["matricid"].'">View</a></td></tr>';
                  }
 
              }

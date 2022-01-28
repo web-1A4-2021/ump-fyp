@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 07:14 AM
+-- Generation Time: Jan 28, 2022 at 08:46 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -72,10 +72,19 @@ CREATE TABLE `fypstudent` (
   `fypid` int(11) NOT NULL,
   `matricid` varchar(10) NOT NULL,
   `studentname` varchar(100) NOT NULL,
+  `studemail` varchar(50) NOT NULL,
   `pcode` varchar(10) NOT NULL,
+  `fypstatus` varchar(10) NOT NULL,
   `phone` int(12) NOT NULL,
   `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `fypstudent`
+--
+
+INSERT INTO `fypstudent` (`fypid`, `matricid`, `studentname`, `studemail`, `pcode`, `fypstatus`, `phone`, `semester`) VALUES
+(2, 'CD20003', 'MOHAMMAD AMIRUL SHAH BIN MOHAMAD NASIR', 'shah@gmail.com.my', 'BCG20', 'FYP 1', 111287222, 6);
 
 -- --------------------------------------------------------
 
@@ -86,21 +95,24 @@ CREATE TABLE `fypstudent` (
 CREATE TABLE `logbook` (
   `logbookid` int(100) NOT NULL,
   `fyptitle` varchar(100) NOT NULL,
-  `week` int(100) NOT NULL,
+  `week` int(19) NOT NULL,
   `date` date NOT NULL,
   `logdesc` varchar(200) NOT NULL,
-  `file` varchar(50) NOT NULL,
+  `file` int(11) NOT NULL,
   `logbookfeedback` varchar(200) NOT NULL,
-  `studentid` int(10) NOT NULL
+  `matricid` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `logbook`
 --
 
-INSERT INTO `logbook` (`logbookid`, `fyptitle`, `week`, `date`, `logdesc`, `file`, `logbookfeedback`, `studentid`) VALUES
-(1, 'FYP SYSTEM', 1, '2022-01-20', 'discuss with lecturer about the use case diagram', '0', '', 3),
-(2, 'UMP Taska System', 1, '2022-01-21', 'update report', '0', '', 4);
+INSERT INTO `logbook` (`logbookid`, `fyptitle`, `week`, `date`, `logdesc`, `file`, `logbookfeedback`, `matricid`) VALUES
+(19, 'Ai Car', 1, '2022-01-28', 'Kereta Terbang Jauh', 0, 'Sila ikut format yang diberikan.Saya dah bagitahu haritu!', 'cd20003'),
+(20, 'FYP system', 1, '2022-01-28', 'doing my report', 0, '', 'CB19101'),
+(21, 'FYP System', 2, '2022-01-26', 'updated my erd', 0, '', 'CB19101'),
+(22, 'KIds System', 1, '2022-01-31', 'Discuss with sv about title', 0, '', 'CB19100'),
+(23, 'Kids System ', 2, '2022-01-29', 'I\'m doing my chapter 1 which is the inroduction, problems, objective and so on', 0, '', 'CB19100');
 
 -- --------------------------------------------------------
 
@@ -353,13 +365,13 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT for table `fypstudent`
 --
 ALTER TABLE `fypstudent`
-  MODIFY `fypid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fypid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `logbook`
 --
 ALTER TABLE `logbook`
-  MODIFY `logbookid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `logbookid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `rating`

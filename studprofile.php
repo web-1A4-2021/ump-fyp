@@ -66,7 +66,7 @@ if (isset($_GET["studID"]))
                <?php
                
                   //$user = $_SESSION['id'];
-                   $sql = "SELECT * FROM student WHERE studentid = '$studentid'";
+                   $sql = "SELECT * FROM student WHERE matricid = '$studentid'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)

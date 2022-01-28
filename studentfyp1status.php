@@ -145,18 +145,22 @@ width: 20%;
                          
 
                        }
+
                        
-                       ?>
-                        
-                        <br><tr><td><button type="submit" name="enrol2" onClick="myFunction()">Enrol FYP2</button></td></tr>
                        
-                       <?php
+                       echo '<p align="center">Your can update your FYP 1 to FYP 2 in your Profile.</p>';
+
+
+                     
                     }
 
 
                        else{
 
-                        echo "Repeat";
+                        echo '<br><tr><td id="right" > Total Mark FYP1 : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="'.$row["totalsup"].'" </td></tr>';
+                        echo '<br><tr><td id="right" > Gred : </td>' ;
+                        echo '<td ><input type ="text" class="form-cotrol" readonly="readonly" name="totalsup" value="Need to Repeat The FYP 1" </td></tr>';
                        }
                     }
                 }
@@ -174,29 +178,6 @@ width: 20%;
 
 
  </table>
-
-<?php
-$conn = mysqli_connect("localhost", "root", "", "studfyp");
-if (!$conn) {
-   die('Could not connect: ' . mysqli_connect_error());
-}
-
-if(isset($_POST["enrol2"]))
-
-{
-    
-    mysqli_query($conn,"insert into studentfyp2 (fypid,matricid,studentname,studentemail,pcode,phone,semester) select fypid,matricid,studentname,studentemail,pcode,phone,semester from studentfyp1 where matricid='".$_SESSION['User']."'");
-
-    header('location:studenthomefyp2.php');
-    
-    
-}
-?>
-<script>
-function myFunction() {
-  alert("Your Enrol FYP 2 Successfully");
-}
-</script>
 
 
 
