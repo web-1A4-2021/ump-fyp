@@ -6,7 +6,7 @@ session_start();
     {
         $matricid=$_SESSION['User'];
 
-     $ret=mysqli_query($conn,"insert into studentfyp1 (fypid,matricid,studentname,studentemail,pcode,phone,semester) select studentid,matricid,studentname,studentemail,pcode,phone,semester from student where matricid='".$_SESSION['User']."'");
+     $ret=mysqli_query($conn,"insert into fypstudent (fypid,matricid,studentname,studemail,pcode,fypstatus,phone,semester) select studentid,matricid,studentname,studemail,pcode,fypstatus,phone,semester from student where matricid='".$_SESSION['User']."'");
     if($ret)
     {
     $_SESSION['msg']="Enroll Successfully !!";
