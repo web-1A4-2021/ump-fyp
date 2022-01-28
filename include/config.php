@@ -19,3 +19,4 @@ if (!$conn) {
 }else{
     echo "<script>console.log('Connected')</script>";
 }
+?>
