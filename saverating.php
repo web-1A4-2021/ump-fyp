@@ -1,9 +1,17 @@
 <?php
+session_start();
+include_once './include/config.php';
+
+?>
+
+
+<?php
+
 
 $studentid = $_POST["studentid"];
 $rating = $_POST["rating"];
 
-$conn = mysqli_connect("localhost", "root", "", "heroku_ea38f35ca4afbb9");
+$conn = mysqli_connect("localhost", "root", "", "studfyp");
  
 mysqli_query($conn, "INSERT INTO rating (studentid, rating) VALUES ('$studentid', '$rating')");
 
