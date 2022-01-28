@@ -78,7 +78,7 @@ width: 20%;
               
                 
                   
-                   $sql = "SELECT matricid,studentname,studentemail,pcode,phone,semester FROM studentfyp1 where matricid='".$_SESSION['User']."'";
+                   $sql = "SELECT matricid,studentname,studemail,pcode,fypstatus,phone,semester FROM fypstudent where matricid='".$_SESSION['User']."'";
                    $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
@@ -90,11 +90,13 @@ width: 20%;
                        echo '<br><tr><td id="right" > Name: </td>' ;
                        echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Name" name="name" value="'.$row["studentname"].'" </td></tr>';
                        echo '<tr><td id="right"> Email: </td>' ;
-                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Email" name="email" value="'.$row["studentemail"].'" </td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Email" name="email" value="'.$row["studemail"].'" </td></tr>';
                        echo '<br><tr><td id="right"> Programe Code: </td>' ;
                        echo '<td >'.$row["pcode"].' </td></tr>';
+                       echo '<tr><td id="right"> FYP Status: </td>' ;
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter FYP Status" name="fypstatus" value="'.$row["fypstatus"].'" </td></tr>';
                        echo '<tr><td id="right"> Phone Number: </td>' ;
-                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Room" name="phone" value="'.$row["phone"].'" </td></tr>';
+                       echo '<td ><input type ="text" class="form-cotrol" placeholder="Enter Phone" name="phone" value="'.$row["phone"].'" </td></tr>';
                        echo '<br><tr><td id="right"> Semester: </td>' ;
                        echo '<td >'.$row["semester"].' </td></tr>';
                     }
@@ -129,7 +131,7 @@ if(isset($_POST["update"]))
 
 {
     
-    mysqli_query($conn,"update studentfyp1 set studentname='$_POST[name]',studentemail='$_POST[email]', phone='$_POST[phone]' where matricid ='".$_SESSION['User']."'") or die(mysqli_error($conn));
+    mysqli_query($conn,"update fypstudent set studentname='$_POST[name]',studemail='$_POST[email]',fypstatus='$_POST[fypstatus]',phone='$_POST[phone]' where matricid ='".$_SESSION['User']."'") or die(mysqli_error($conn));
 
     header('location:studentfyp1profile.php');
     
