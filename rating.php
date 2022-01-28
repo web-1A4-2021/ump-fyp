@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+include_once './include/config.php';
+
+?>
+!DOCTYPE html>
 <html lang="en">
     <head>
 
@@ -73,7 +78,7 @@
 
 <?php
     // Connecting with database
-       $conn = mysqli_connect("localhost", "root", "", "studFYP");
+       //$conn = mysqli_connect("localhost", "root", "", "studFYP");
  
     // Getting all students
        $result = mysqli_query($conn, "SELECT * FROM studentlist");
