@@ -1,5 +1,4 @@
 <link rel="shortcut icon" href="#">
-//? Just testing the blue comment
 <?php
 //* connect to databse
 include_once "../include/config.php";

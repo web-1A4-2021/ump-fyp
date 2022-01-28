@@ -49,6 +49,9 @@ include_once '../include/config.php';
     {
         include './report.php';//* View report
     }
+    else{
+        echo "Choose from sidebar";
+    }
 
     ?>
     <form>
