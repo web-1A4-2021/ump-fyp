@@ -1,3 +1,10 @@
+<?php
+  $con = mysqli_connect("localhost","root","","studfyp");
+  if($con){
+    //echo "connected";
+  }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
