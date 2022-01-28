@@ -2,13 +2,17 @@
 session_start();
 ?>
 <?php
-
+//? this is Darwish editting
+include_once "./include/config.php";
+/*
 //Connect to the database server.
-  $link = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+$link = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
 
-  //Select the database.
-  mysqli_select_db($link, "studfyp") or die(mysqli_error($link));
-                //SQL query
+//Select the database.
+mysqli_select_db($link, "studfyp") or die(mysqli_error($link));
+//SQL query
+*/
+//? END
 if(isset($_POST['searchstudent'])){
     $studentid=$_POST['studentid'];
    
