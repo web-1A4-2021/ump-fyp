@@ -20,5 +20,5 @@ if (!$conn) {
     echo "<script>console.log('Connected')</script>";
 }
 
-session_start();
+
 ?>
