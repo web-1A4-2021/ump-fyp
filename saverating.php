@@ -1,4 +1,3 @@
-
 <?php
 
 $studentid = $_POST["studentid"];
