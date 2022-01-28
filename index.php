@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="#">
 </head>
 <body>
+    <img src="./img/logoUMP.png" alt="" srcset="" style="text-align:center;height:250px;width: 250px;margin-right:auto;margin-left:auto;display:block;"><br>
 <form action="./function/userLogin.php" method="post">
     <p>UMP FYP</p>
     <label for="matricid">Matric ID</label>
