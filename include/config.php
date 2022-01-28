@@ -19,4 +19,6 @@ if (!$conn) {
 }else{
     echo "<script>console.log('Connected')</script>";
 }
+
+session_start();
 ?>
