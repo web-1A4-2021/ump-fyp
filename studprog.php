@@ -78,7 +78,7 @@ if (isset($_GET["studID"]))
        <?php
          
         
-       $sql = "SELECT studentname FROM student WHERE studentid = '$studentid'";
+       $sql = "SELECT studentname FROM student WHERE matricid = '$studentid'";
        $result = $conn -> query($sql);
          if($result->num_rows > 0)
          {
@@ -97,7 +97,7 @@ if (isset($_GET["studID"]))
         <table  id="tb1" border="1" >
 
         <?php
-            $sql = "SELECT logbookid, week FROM logbook WHERE studentid = '$studentid'" ;
+            $sql = "SELECT logbookid, week FROM logbook WHERE matricid = '$studentid'" ;
             $result = $conn -> query($sql);
 
             if($result->num_rows > 0)
