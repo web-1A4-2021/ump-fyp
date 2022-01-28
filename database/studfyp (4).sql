@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 08:32 AM
+-- Generation Time: Jan 28, 2022 at 08:46 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -72,10 +72,19 @@ CREATE TABLE `fypstudent` (
   `fypid` int(11) NOT NULL,
   `matricid` varchar(10) NOT NULL,
   `studentname` varchar(100) NOT NULL,
+  `studemail` varchar(50) NOT NULL,
   `pcode` varchar(10) NOT NULL,
+  `fypstatus` varchar(10) NOT NULL,
   `phone` int(12) NOT NULL,
   `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `fypstudent`
+--
+
+INSERT INTO `fypstudent` (`fypid`, `matricid`, `studentname`, `studemail`, `pcode`, `fypstatus`, `phone`, `semester`) VALUES
+(2, 'CD20003', 'MOHAMMAD AMIRUL SHAH BIN MOHAMAD NASIR', 'shah@gmail.com.my', 'BCG20', 'FYP 1', 111287222, 6);
 
 -- --------------------------------------------------------
 
@@ -356,7 +365,7 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT for table `fypstudent`
 --
 ALTER TABLE `fypstudent`
-  MODIFY `fypid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fypid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `logbook`
