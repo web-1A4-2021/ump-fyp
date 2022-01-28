@@ -61,7 +61,7 @@ width: 20%;
        <li><a href="studentsvinfo.php" class="button" name="profile">Supervisor Info</a></li>
         <li><a href="studentfyp1status.php" class="button" name="status">Status</a></li>
        <li><a href="studentfyp1profile.php" class="button"  name="profile">Profile</a></li>
-       <li><a href="#" class="button"  name="report">Rate</a></li>
+       <li><a href="studentfyp1report.php" class="button"  name="report">Rate</a></li>
     </div>
     <div class="column right">
     
